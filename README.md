@@ -9,9 +9,11 @@ The main changes:
 - Change visuals to use the 2026 version of GCPD.
 - Update links, text, and other content to reflect the 2026 update.
 
-To ensure code doesn't break, changes are being committed incrementally, testing after each change.
+To ensure code doesn't break, changes are committed incrementally, testing after each change.
 
-Not a priority: Updating dependency libraries to their latest versions, unless necessary to fix critical issues.
+Not a priority: Updating dependency libraries to their latest versions, unless necessary to fix critical issues. Many of the libraries are quite out of date, but the code works as is.
+
+Tasks are managed via [GitHub Issues](https://github.com/asifm/GCPD-website_v2/issues).
 
 ## Technologies Used
 - [Nuxt.js](https://nuxtjs.org/): A framework for creating Vue.js applications with server-side rendering and static site generation capabilities.

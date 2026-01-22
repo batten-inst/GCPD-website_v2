@@ -10,8 +10,7 @@ This file contains focused, actionable guidance to help AI coding agents become 
 2. Key workflows / commands
 - Dev server: `npm run dev` (starts Nuxt in SPA dev mode).
 - Debug with inspector: `npm run dev-debug` (node --inspect on Nuxt binary).
-- Build: `npm run build` (server build) and `npm run generate` (static export).
-- Quick deploy demo: `npm run generate-surge` (generates and pushes `dist` to surge).
+- Generate: `npm run generate` (static export).
 - Lint: `npm run lint`.
 
 3. Important files & patterns (use these examples)
@@ -42,4 +41,38 @@ This file contains focused, actionable guidance to help AI coding agents become 
 - UI wiring and examples: `pages/interactive/index.vue` and `components/outputs/*`.
 - Global config: `nuxt.config.js`, `plugins/`.
 
-If anything in these notes is unclear or you want more detail for a specific area (data ingestion, a particular chart, or deployment), tell me which part to expand.
+8. Pages → Components mapping
+
+Each file under pages/ is a top-level route that composes smaller Vue components (from components/). Pages typically:
+- import one compute component (components/ComputeData.vue or a compute-only module),
+- import zero or more input controls (components/inputs/*),
+- import zero or more presentation components (components/outputs/*),
+- wire these pieces together via the event bus (assets/js/FilterBus.js), props, and a key-based reset pattern.
+
+How to read / document a page
+- path: pages/<...>.vue
+- imports: list of component filenames it imports
+- role: brief description (route purpose, primary UI)
+- wiring: how it connects to ComputeData and FilterBus (events emitted/listened, use of keyCounter)
+- notes: any special behavior (SSR mode, data sources, lazy-loading)
+
+Example (pages/interactive/index.vue)
+- path: pages/interactive/index.vue
+- imports:
+  - components/ComputeData.vue (initializes Crossfilter and emits 'new-data')
+  - components/inputs/GeographySelector.vue (emits 'change-geography' on FilterBus)
+  - components/outputs/PatentsChart.vue, PatentsList.vue (listen to 'new-data' on FilterBus)
+- role: interactive dashboard route; orchestrates compute and presentation components
+- wiring:
+  - passes config props to ComputeData
+  - increments keyCounter to force remount of outputs for resets
+  - controls call FilterBus.$emit(...) to update filters; ComputeData re-computes and emits FilterBus.$emit('new-data', payload)
+
+Minimal template to add when documenting a page
+- path:
+- imports:
+- role:
+- wiring:
+- notes:
+
+Add one documented block like the example above for each file in pages/ so contributors can quickly see which components each route uses and how they communicate.

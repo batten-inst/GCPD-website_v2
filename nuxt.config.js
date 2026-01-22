@@ -34,19 +34,19 @@ module.exports = {
       },
       {
         rel: 'preload',
-        href: '/style/fonts/FranklinGothicURW/FranklinGothicURW-Hea.woff',
+        href: '/style/fonts/FranklinGothicURW/FranklinGothicURW-Hea.woff2',
         as: 'font',
         crossorigin: 'anonymous',
       },
       {
         rel: 'preload',
-        href: '/style/fonts/FranklinGothicURW/FranklinGothicURW-Med.woff',
+        href: '/style/fonts/FranklinGothicURW/FranklinGothicURW-Med.woff2',
         as: 'font',
         crossorigin: 'anonymous',
       },
       {
         rel: 'preload',
-        href: '/style/fonts/FranklinGothicURW/FranklinGothicURW-Boo.woff',
+        href: '/style/fonts/FranklinGothicURW/FranklinGothicURW-Boo.woff2',
         as: 'font',
         crossorigin: 'anonymous',
       },

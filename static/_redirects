@@ -1,0 +1,7 @@
+# These rules will change if you change your site’s custom domains or HTTPS settings
+
+# Redirect domain aliases to primary domain
+https://patent.darden.virginia.edu/* https://patents.darden.virginia.edu/:splat 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+https://gcpd.netlify.com/* https://patents.darden.virginia.edu/:splat 301!

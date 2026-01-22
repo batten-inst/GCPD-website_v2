@@ -1,0 +1,51 @@
+company,total_count_patents,total_rdex,total_capex,total_sales,total_ebitda,industry_code,country,region,industry
+Hitachi Ltd,8876,16149.61,22482.03,284501.34,35092.56,6,Japan,Asia Pacific,Business Equipment & Software
+General Electric Co,7607,10364,24803,339997.04,56285,12,United States,North America,Other
+Toshiba Corp,5732,10125.35,12223.83,179844.56,17973.04,3,Japan,Asia Pacific,Manufacturing
+International Business Machines Corp,5361,31897,57683,453678.07,120030.05,6,United States,North America,Business Equipment & Software
+Koninklijke Philips NV,5098,15030.65,16029.54,215880.26,20868.89,10,Netherlands,Europe,Healthcare
+Canon Inc,5050,2595.08,3838.05,49186.97,6565.23,6,Japan,Asia Pacific,Business Equipment & Software
+General Motors Co,4527,34472.59,77380.06,886700.88,101747.36,2,United States,North America,Consumer Durables
+Fujifilm Holdings Corp,4401,2377.93,3312.28,40809.62,9393.74,3,Japan,Asia Pacific,Manufacturing
+DowDuPont Inc,4391,5644,10656,125876,24984,5,United States,North America,Chemicals
+CBS Corp -Old,3993,2245.2,5416.8,104877.98,12056.16,7,United States,North America,Telecommunication
+E. I. du Pont de Nemours and Co,3594,10286,29626,295194,53562,5,United States,North America,Chemicals
+Panasonic Corp,3215,12676.38,11959.28,250552.21,30213.65,3,Japan,Asia Pacific,Manufacturing
+Honda Motor Co Ltd,3151,7276.14,11257,158611.04,16956.23,2,Japan,Asia Pacific,Consumer Durables
+Honeywell Inc,3069,3506.5,3988.4,59481.93,6462.36,6,United States,North America,Business Equipment & Software
+Eastman Kodak Co,3052,8856.5,14068.43,122574.29,26419.65,6,United States,North America,Business Equipment & Software
+Pfizer Inc,2790,3040.4,2525.5,41814.3,9291.9,10,United States,North America,Healthcare
+Motorola Solutions Inc,2681,4383,6414.23,55990.47,7952.5,6,United States,North America,Business Equipment & Software
+RCA Corp,2640,1296,8091.9,52313.93,5772.66,3,United States,North America,Manufacturing
+Sony Corp,2392,6028.62,7428.78,85912.93,11281.05,3,Japan,Asia Pacific,Manufacturing
+Exxon Mobil Corp,2344,6218,71737.2,887026.31,124502.71,4,United States,North America,Energy
+Xerox Corp,2309,6219.9,9723.4,104807.28,18272.97,6,United States,North America,Business Equipment & Software
+Toyota Motor Corp,2282,0,11728.48,284942.49,25720.97,2,Japan,Asia Pacific,Consumer Durables
+3M Co,2253,4932.5,7170.03,82380.54,18538.76,3,United States,North America,Manufacturing
+Nec Corp,2243,8830.67,13669.3,129189.89,15448.49,6,Japan,Asia Pacific,Business Equipment & Software
+Mitsubishi Corp,2039,0,557.01,343389.95,2476.23,9,Japan,Asia Pacific,Wholesale & Retail
+Merck & Co Inc.,2024,4468.46,2929.19,40759.98,12268.89,10,United States,North America,Healthcare
+Union Carbide Corp,1968,2045,8056,87060,13081.24,5,United States,North America,Chemicals
+Texas Instruments Inc,1967,3548.4,5255.7,51238.34,5992.64,6,United States,North America,Business Equipment & Software
+Shell Oil Co,1930,2180,28090,202667,40380,4,United States,North America,Energy
+AT&T Inc,1928,0,9876.9,48203.75,21540.9,7,United States,North America,Telecommunication
+GTE Corp,1907,2604,30849.97,140711.41,46317.14,7,United States,North America,Telecommunication
+United Technologies Corp,1866,8750.22,7251.03,156102.01,14353.25,3,United States,North America,Manufacturing
+ITT Inc,1714,5306.59,6973.86,146077.11,15099.2,3,United States,North America,Manufacturing
+Rockwell Automation Inc.,1651,3071,4979.2,98982.45,11854.62,3,United States,North America,Manufacturing
+Mobil Oil Corp,1601,1116,16641,300988.09,39386,4,United States,North America,Energy
+Texaco Inc,1578,1633.9,23103.07,421453.83,42821.94,4,United States,North America,Energy
+Ford Motor Co,1525,21757,35277.2,584945.51,69069,2,United States,North America,Consumer Durables
+Ricoh Co Ltd,1494,1835.02,2146.94,30889.58,3109.02,3,Japan,Asia Pacific,Manufacturing
+PPG Industries Inc.,1449,1691.1,0,43297.26,7493.76,5,United States,North America,Chemicals
+Tyco International Plc,1443,54.9,279.44,10317.56,1163.97,6,Ireland,Europe,Business Equipment & Software
+Boeing Co,1389,6732.6,6239.5,132302.4,8576.1,3,United States,North America,Manufacturing
+American Cyanamid Co,1281,2553.09,2417.35,38884.01,4910.09,5,United States,North America,Chemicals
+Chevron Corp,1267,2397.25,32441,319952.06,43173,4,United States,North America,Energy
+Eaton Corp Plc,1243,1103.18,1382.7,32741.78,3918.29,3,Ireland,Europe,Manufacturing
+Bristol-Myers Squibb Co,1162,2928.9,2179.6,48203.9,9616.43,10,United States,North America,Healthcare
+Procter & Gamble Co (The),1090,4197.8,8566.4,146305.2,18380.2,5,United States,North America,Chemicals
+Primary PDC Corp,993,1285.97,800.45,15146.19,1898.76,3,United States,North America,Manufacturing
+Halliburton Co,985,758.51,3023.63,57611.05,7468.23,4,United States,North America,Energy
+Atlantic Richfield Co,974,1281.9,29516.64,212387.71,39452.99,4,United States,North America,Energy
+Amoco Corp,964,1955.33,31593.71,249230.55,52851.6,4,United States,North America,Energy

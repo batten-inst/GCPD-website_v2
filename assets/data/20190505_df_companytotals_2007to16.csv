@@ -1,0 +1,51 @@
+company,total_count_patents,total_rdex,total_capex,total_sales,total_ebitda,industry_code,country,region,industry
+International Business Machines Corp,60755,57430,39131,963673,222376,6,United States,North America,Business Equipment & Software
+Samsung Electronics Co Ltd,53056,81126.31,175268.22,1533975.78,314677.57,6,South Korea,Asia Pacific,Business Equipment & Software
+Canon Inc,30955,32709.31,29483.69,377820.66,68007.72,6,Japan,Asia Pacific,Business Equipment & Software
+Sony Corp,26225,46937.28,35494.63,766214.52,50817.73,3,Japan,Asia Pacific,Manufacturing
+Panasonic Corp,25859,46761.07,35980.73,798920.14,59469.8,3,Japan,Asia Pacific,Manufacturing
+Microsoft Corp,24792,97689,39231,719329,279194,6,United States,North America,Business Equipment & Software
+Hitachi Ltd,24294,37962.29,64496.35,981553.13,95805.41,6,Japan,Asia Pacific,Business Equipment & Software
+Toshiba Corp,22273,34263.54,27938.1,638912.5,38157.83,3,Japan,Asia Pacific,Manufacturing
+Intel Corp,18276,89220,79477,485330,199268,6,United States,North America,Business Equipment & Software
+Lg Corp,18153,6942.91,20747.93,301850.87,43793.51,12,South Korea,Asia Pacific,Other
+Fujitsu Ltd,17552,22717.58,16264.86,474791.53,35300.19,6,Japan,Asia Pacific,Business Equipment & Software
+Fujifilm Holdings Corp,15816,17415.25,9808.43,241094.71,30569.87,3,Japan,Asia Pacific,Manufacturing
+Siemens AG,15560,53087.93,33141.06,994359.41,97922.88,12,Germany,Europe,Other
+QUALCOMM Inc.,15191,37094,9045,175285,61698,6,United States,North America,Business Equipment & Software
+General Electric Co,14773,40427,121783,1463854,387412,12,United States,North America,Other
+Seiko Epson Corp,14738,6053.39,4447.88,104616.26,10062.92,6,Japan,Asia Pacific,Business Equipment & Software
+HP Inc,13279,31120,33191,1086182.02,133163,6,United States,North America,Business Equipment & Software
+Alphabet Inc,12938,67487.21,54744.19,470528.1,159921.86,6,United States,North America,Business Equipment & Software
+Hon Hai Precision Industry Co Ltd,12819,12528.46,19739.17,1059915.9,52999.91,6,Taiwan,Asia Pacific,Business Equipment & Software
+Honda Motor Co Ltd,12697,57915.91,113864.74,1103599.84,133185,2,Japan,Asia Pacific,Consumer Durables
+Ricoh Co Ltd,12491,11210.26,7930.74,209706.33,18816.33,3,Japan,Asia Pacific,Manufacturing
+Nokia Corp,11967,60496.38,7107.32,424464.42,48668.7,6,Finland,Europe,Business Equipment & Software
+Mitsubishi Corp,11488,270.06,33069.39,1729129.04,44446.66,9,Japan,Asia Pacific,Wholesale & Retail
+Toyota Motor Corp,10940,91422,248496,2340495.98,269230,2,Japan,Asia Pacific,Consumer Durables
+Apple Inc,10862,39444,59247,1231883.02,404427,6,United States,North America,Business Equipment & Software
+General Motors Co,10712,74805,114783,1502906,98943,2,United States,North America,Consumer Durables
+Micron Technology Inc.,10416,9924,25225,95966,27133,6,United States,North America,Business Equipment & Software
+AT&T Inc,10165,13183,200773,1316174.02,409981,7,United States,North America,Telecommunication
+Sharp Corp,9905,15330.16,14862.52,277338.15,20759.13,2,Japan,Asia Pacific,Consumer Durables
+Xerox Corp,9541,5780,2676,186571,26474,6,United States,North America,Business Equipment & Software
+Nec Corp,9520,19826.03,6771.17,337344.69,20753.67,6,Japan,Asia Pacific,Business Equipment & Software
+Cisco Systems Inc,9277,56330,11640,434055,118911,6,United States,North America,Business Equipment & Software
+Taiwan Semiconductor Manufacturing Co Ltd,9138,13026.19,65852.82,174442.97,107176.56,6,Taiwan,Asia Pacific,Business Equipment & Software
+Medtronic PLC,8982,17448,6293,188465,62828,10,Ireland,Europe,Healthcare
+Infineon Technologies AG,8954,8198.82,7816.41,60711.54,12507.6,6,Germany,Europe,Business Equipment & Software
+LG Display Co Ltd,8621,6065.68,29877.11,212825.84,39751.71,6,South Korea,Asia Pacific,Business Equipment & Software
+Telefonaktiebolaget LM Ericsson,8580,45081.02,6902.83,302289.73,41619.72,6,Sweden,Europe,Business Equipment & Software
+Brother Industries Ltd,8262,3935.86,2231,57211.52,6840.48,6,Japan,Asia Pacific,Business Equipment & Software
+Texas Instruments Inc,8119,16263,6591,128736,45030,6,United States,North America,Business Equipment & Software
+Oracle Corp,8076,45309,7931,333701,147857,6,United States,North America,Business Equipment & Software
+Boeing Co,7937,39537,18529,778386,73281,3,United States,North America,Manufacturing
+Koninklijke Philips NV,7919,22151.03,7858.41,315017.38,36884.07,10,Netherlands,Europe,Healthcare
+Renesas Electronics Corp,7863,12759.71,5683.8,75173.73,9130.78,6,Japan,Asia Pacific,Business Equipment & Software
+Broadcom Corp,7768,15361.29,1314.88,51871.15,7837.12,6,United States,North America,Business Equipment & Software
+SK Hynix Inc,7662,7755.74,36433.22,110098.22,45791.45,6,South Korea,Asia Pacific,Business Equipment & Software
+Denso Corp,7511,33823.47,26265.77,374809.53,46260.26,2,Japan,Asia Pacific,Consumer Durables
+Bosch Ltd,7398,220.68,850.84,14076.72,2586.58,2,India,Asia Pacific,Consumer Durables
+BlackBerry Ltd,7289,9202.29,4967.85,95059.81,18388.63,6,Canada,North America,Business Equipment & Software
+STMicroelectronics NV,6943,19531,7546,86283,11777,6,Switzerland,Europe,Business Equipment & Software
+Ford Motor Co,6847,62800,59400,1428862.01,162988,2,United States,North America,Consumer Durables

@@ -13,9 +13,6 @@ export default {
   data() {
     return {
       calculating: false,
-      // geography: '',
-      // industry: '',
-      // rangeYears: [],
       geography: 'All Countries',
       industry: 'All Industries',
       rangeYears: [2010, 2017],

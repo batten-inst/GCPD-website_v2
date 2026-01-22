@@ -1,6 +1,4 @@
 const pkg = require('./package');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-//   .BundleAnalyzerPlugin;
 
 module.exports = {
   mode: 'spa',
@@ -92,14 +90,6 @@ module.exports = {
     },
   },
   build: {
-    // plugins: [
-    //   new BundleAnalyzerPlugin({
-    //     analyzerMode: 'static',
-    //     generateStatsFile: false,
-    //     openAnalyzer: false,
-    //     logLevel: 'info',
-    //   }),
-    // ],
     extend(config, ctx) {
       if (ctx.isClient) {
         config.devtool = 'source-map';

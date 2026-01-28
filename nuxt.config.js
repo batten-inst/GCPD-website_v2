@@ -93,10 +93,8 @@ module.exports = {
     extend(config, ctx) {
       if (ctx.isClient) {
         config.devtool = 'source-map';
-        // console.log('config.devtool', config.devtool);
       } else {
         config.devtool = 'inline-source-map';
-        // console.log('config.devtool', config.devtool);
       }
       config.module.rules.push(
         {
@@ -113,7 +111,6 @@ module.exports = {
           ],
         },
       );
-      // console.log(config);
     },
   },
 };

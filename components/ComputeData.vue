@@ -4,7 +4,7 @@
 import Crossfilter from 'crossfilter';
 
 import { dataProm } from '@/assets/js/fetchData';
-import { lists } from '@/assets/data/listData';
+// import { lists } from '@/assets/data/listData';
 
 // import components; FilterBus is an event bus
 import { FilterBus } from '@/assets/js/FilterBus';
@@ -14,7 +14,7 @@ export default {
     return {
       calculating: false,
       geography: 'All Countries',
-      industry: 'All Industries',
+      sector: 'All Sectors',
       rangeYears: [2010, 2017],
     };
   },
@@ -24,14 +24,14 @@ export default {
       //:: Initialize crossfilter with data and its dimensions and groups :://
       this.cf = Crossfilter(data);
       this.companyDim = this.cf.dimension(d => d.company);
-      this.industryDim = this.cf.dimension(d => d.industry);
+      this.sectorDim = this.cf.dimension(d => d.sector);
       this.countryDim = this.cf.dimension(d => d.country);
       this.regionDim = this.cf.dimension(d => d.region);
       this.yearsDim = this.cf.dimension(d => d.year);
 
       this.companyGrp = this.companyDim.group();
       this.countryGrp = this.countryDim.group();
-      this.industryGrp = this.industryDim.group();
+      this.sectorGrp = this.sectorDim.group();
       this.regionGrp = this.regionDim.group();
       this.yearGrp = this.yearsDim.group();
 
@@ -73,7 +73,7 @@ export default {
         obj.city = '';
         obj.country = '';
         obj.region = '';
-        obj.industry = '';
+        obj.sector = '';
 
         return obj;
       }
@@ -82,7 +82,7 @@ export default {
         p.city = v.city;
         p.country = v.country;
         p.region = v.region;
-        p.industry = v.industry;
+        p.sector = v.sector;
         p.patentcount += v.patentcount;
 
         ['assets', 'capex', 'rdex', 'sales', 'ebitda'].forEach(dim => {
@@ -120,13 +120,13 @@ export default {
       this.companyGrp.reduce(reduceAdd, reduceRemove, reduceInitial);
 
       this.countryGrp.reduceSum(d => d.patentcount);
-      this.industryGrp.reduceSum(d => d.patentcount);
+      this.sectorGrp.reduceSum(d => d.patentcount);
       this.regionGrp.reduceSum(d => d.patentcount);
       this.yearGrp.reduceSum(d => d.patentcount);
 
       // Initiate view with default values
       this.changeGeography(this.geography);
-      this.changeIndustry(this.industry);
+      this.changeSector(this.sector);
       this.changeYears(this.rangeYears);
       this.emitData();
 
@@ -140,10 +140,10 @@ export default {
         this.emitData();
       });
 
-      FilterBus.$on('change-industry', payload => {
-        this.industry = payload;
+      FilterBus.$on('change-sector', payload => {
+        this.sector = payload;
         this.showMessageCalculating();
-        this.changeIndustry(payload);
+        this.changeSector(payload);
         this.emitData();
       });
 
@@ -156,7 +156,7 @@ export default {
 
       FilterBus.$on('reset-data', () => {
         this.changeGeography('All Countries');
-        this.changeIndustry('All Industries');
+        this.changeSector('All Sectors');
         this.changeYears([2010, 2017]);
         this.emitData();
       });
@@ -187,12 +187,12 @@ export default {
           this.countryDim.filter(payload);
       }
     },
-    changeIndustry(payload) {
-      // Apply new industry filter unless payload is "all industries"
-      if (payload !== 'All Industries') {
-        this.industryDim.filter(payload);
+    changeSector(payload) {
+      // Apply new sector filter unless payload is "all sectors"
+      if (payload !== 'All Sectors') {
+        this.sectorDim.filter(payload);
       } else {
-        this.industryDim.filter(null);
+        this.sectorDim.filter(null);
       }
     },
     changeYears(payload) {
@@ -207,12 +207,12 @@ export default {
     },
     emitData() {
       FilterBus.$emit('new-data', {
-        industry: this.industry,
+        sector: this.sector,
         geography: this.geography,
         rangeYears: this.rangeYears,
         cf: this.cf,
         companyGrp: this.companyGrp,
-        industryGrp: this.industryGrp,
+        sectorGrp: this.sectorGrp,
         countryGrp: this.countryGrp,
         regionGrp: this.regionGrp,
         yearGrp: this.yearGrp,

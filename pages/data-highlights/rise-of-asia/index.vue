@@ -9,9 +9,6 @@ import {
   sectorsObj,
   regionSectorDataProm,
   yearRegionDataProm,
-  // TODO
-  // company1980to89DataProm,
-  // company2007to16DataProm,
 } from '@/assets/js/fetchData.js';
 
 const regionList = ['Asia Pacific', 'Europe', 'North America'];
@@ -144,36 +141,6 @@ export default {
       });
     });
 
-    // company2007to16DataProm.then(data_ => {
-    //   Object.keys(regionObj).forEach(region => {
-    //     const seriesData = data_
-    //       .filter(row => row.region === region)
-    //       .map(row => ({
-    //         name: row.company,
-    //         value: +row.total_count_patents,
-    //       }));
-    //     vm.regionCompanyPack2007to16Opts.series.push({
-    //       name: region,
-    //       data: seriesData,
-    //       color: regionObj[region],
-    //     });
-    //   });
-    // });
-    // company1980to89DataProm.then(data_ => {
-    //   Object.keys(regionObj).forEach(region => {
-    //     const seriesData = data_
-    //       .filter(row => row.region === region)
-    //       .map(row => ({
-    //         name: row.company,
-    //         value: +row.total_count_patents,
-    //       }));
-    //     vm.regionCompanyPack1980to89Opts.series.push({
-    //       name: region,
-    //       data: seriesData,
-    //       color: regionObj[region],
-    //     });
-    //   });
-    // });
     yearRegionDataProm.then(data_ => {
       regionList.forEach(region => {
         const filteredData = data_
@@ -211,16 +178,6 @@ export default {
       div(class="uk-width-1-1@s")
         p.uk-margin-large-top It's notable, but perhaps not surprising, that the Asia Pacific region outshines North America in manufacturing — and is not far behind in business equipment and software, the sector that generated most patents during 1980–2016.
         chart-heatmap(:custom-options="regionSectorHeatmapOpts")
-    //- .uk-grid(uk-grid).uk-card-default.uk-padding
-    //-   div(class="uk-width-1-1@s")
-    //-     p(class="uk-hidden@s") [Please view the charts on a larger screen. They cannot be rendered on small screens.]
-    //-     p.uk-margin-large-top Here's another look at how regional distribution changed dramatically between the first ten years (1980–2016) and the last ten years (2007–2016) of our dataset's coverage.
-    //-     p The smaller circles represent the top 50 companies, by aggregate count of patents, during those two periods. Hover over the circles for details.
-      //- div(class="uk-width-1-1@s uk-visible@s" uk-grid).uk-grid
-      //-   div(class="uk-width-1-2@s")
-      //-     chart-circlepack(:custom-options="regionCompanyPack1980to89Opts")
-      //-   div(class="uk-width-1-2@s")
-      //-     chart-circlepack(:custom-options="regionCompanyPack2007to16Opts")
 </template>
 
 <style lang="scss" scoped>

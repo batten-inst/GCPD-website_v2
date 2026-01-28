@@ -11,6 +11,12 @@ export const lists = {
       sector_desc: 'All sectors',
     },
     {
+      sector_code: 'NA',
+      sector: 'Unknown',
+      sector_desc_long: 'Sector not classified',
+      sector_desc: 'Sector not classified',
+    },
+    {
       sector_code: '10',
       sector: 'Energy',
       sector_desc_long:

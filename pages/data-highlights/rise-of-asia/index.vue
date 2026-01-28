@@ -58,7 +58,7 @@ export default {
           categories: regionList,
         },
         title: {
-          text: 'Region-Sector Matrix (1980–2023)',
+          text: 'Region-Sector Heatmap (1976–2023)',
         },
         tooltip: {
           style: {

@@ -19,7 +19,7 @@ export default {
         plotOptions: {
           series: {
             borderWidth: 1,
-            borderColor: '#04258e',
+            borderColor: '#eeefff',
             dataLabels: {
               enabled: true,
               formatter() {
@@ -29,6 +29,7 @@ export default {
           },
         },
         chart: {
+          height: 450,
           type: 'heatmap',
           marginTop: 40,
           marginBottom: 150,
@@ -58,7 +59,7 @@ export default {
           visible: true,
           title: null,
           style: {
-            fontSize: '18px',
+            fontSize: '20px',
           },
           className: 'my-text-heavy',
         },

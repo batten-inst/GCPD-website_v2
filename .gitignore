@@ -1,3 +1,6 @@
+*.bak
+*.tmp
+
 # Ignoring files used for quick experiments and tests
 test.vue
 

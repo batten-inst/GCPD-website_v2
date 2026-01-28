@@ -2,7 +2,6 @@
 import { cross as d3Cross, format as d3Format } from 'd3';
 import ChartStacked from '@/components/outputs/ChartStacked';
 import ChartHeatmap from '@/components/outputs/ChartHeatmap';
-import ChartCirclepack from '@/components/outputs/ChartCirclepack';
 
 // import { lists } from '@/assets/data/listData.js';
 import {
@@ -24,28 +23,9 @@ export default {
   components: {
     ChartStacked,
     ChartHeatmap,
-    ChartCirclepack,
   },
   data() {
     return {
-      // regionCompanyPack1980to89Opts: {
-      //   series: [],
-      //   chart: {
-      //     height: '50%',
-      //   },
-      //   title: {
-      //     text: 'Top 50 Companies of 1980–1989',
-      //   },
-      // },
-      // regionCompanyPack2007to16Opts: {
-      //   series: [],
-      //   chart: {
-      //     height: '80%',
-      //   },
-      //   title: {
-      //     text: 'Top 50 Companies of 2007–2016',
-      //   },
-      // },
       regionSectorHeatmapOpts: {
         series: [],
         xAxis: {

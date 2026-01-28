@@ -19,6 +19,7 @@ export default {
     return {
       chartOptions: {
         chart: {
+          height: 700,
           type: 'bubble',
           zoomType: 'xy',
           scrollablePlotArea: {

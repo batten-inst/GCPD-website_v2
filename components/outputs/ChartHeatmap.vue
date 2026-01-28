@@ -65,7 +65,8 @@ export default {
         colorAxis: {
           min: 0,
           minColor: '#ffffff',
-          maxColor: '#04258e',
+          // maxColor: '#04258e',
+          maxColor: '#301934',
         },
       },
     };

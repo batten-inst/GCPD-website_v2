@@ -19,9 +19,9 @@ export default {
         'Asia Pacific',
         'Other',
       ],
-      industryList: lists.industries.map(el => el.industry),
+      sectorList: lists.sectors.map(el => el.sector),
       region: 'All Regions',
-      industry: 'All Industries',
+      sector: 'All Sectors',
       showFinancials: false,
       years: fillRange(2012, 2016),
       showLastFiveYears: true,
@@ -31,18 +31,18 @@ export default {
     dataByYear() {
       return this.years.map(year => {
         const filterFunc =
-          this.region === 'All Regions' && this.industry === 'All Industries'
+          this.region === 'All Regions' && this.sector === 'All Sectors'
             ? row => row.year === year
             : this.region === 'All Regions' &&
-              this.industry !== 'All Industries'
-            ? row => row.year === year && row.industry === this.industry
+              this.sector !== 'All Sectors'
+              ? row => row.year === year && row.sector === this.sector
             : this.region !== 'All Regions' &&
-              this.industry === 'All Industries'
+                this.sector === 'All Sectors'
             ? row => row.year === year && row.region === this.region
             : row =>
                 row.year === year &&
                 row.region === this.region &&
-                row.industry === this.industry;
+                  row.sector === this.sector;
         return this.data_
           .filter(filterFunc)
           .sort((a, b) => b.patentcount - a.patentcount)
@@ -85,7 +85,7 @@ export default {
         div(class="uk-width-1-4@s").uk-card.uk-card-body.uk-padding-small
           vue-select(:options="regionList" v-model="region" :clearable="false" max-height="300px")
           br 
-          vue-select(:options="industryList" v-model="industry" :clearable="false")
+          vue-select(:options="sectorList" v-model="sector" :clearable="false")
 
         div.uk-card.uk-card-body.uk-padding-small
           button.uk-button.uk-button-small(@click="showFinancials = !showFinancials") 
@@ -108,7 +108,7 @@ export default {
           .uk-h5 See more data highlights
           ul.uk-list
             li: nuxt-link(to="/data-highlights/rise-of-asia") The Rise of Asia 
-            li: nuxt-link(to="/data-highlights/tech-leading-innovation") Technology Industry Leading in Innovation 
+            li: nuxt-link(to="/data-highlights/tech-leading-innovation") Technology Sector Leading in Innovation 
     div.bg-white.uk-padding-small.uk-padding-remove-left
       .uk-grid.uk-grid-small(uk-grid class="uk-child-width-1-3@s uk-child-width-expand@m")
         .uk-panel(v-for="yearArr in dataByYear.slice(0, 5)")
@@ -116,7 +116,7 @@ export default {
           .uk-card.uk-animation-fade.uk-card-default.uk-margin-small-bottom(v-for="(companyObj, i) in yearArr")
             ul.company-info-card.uk-list.uk-padding-small.uk-margin-remove.uk-inline-clip(:class="companyObj.region | makeKebab")
               li.uk-text-small
-                | {{ companyObj.industry}}
+                | {{ companyObj.sector}}
               li.fg-blue.uk-text-bold.uk-text-uppercase.uk-text-break.uk-margin-remove
                 | {{ companyObj.company | removePeriods }}
               li.uk-text-small.uk-margin-remove.uk-padding-remove.uk-text-left.fg-blue

@@ -30,6 +30,7 @@ export default {
           },
         },
         chart: {
+          height: 700,
           type: 'column',
           zoomType: 'xy',
           scrollablePlotArea: {
@@ -39,9 +40,9 @@ export default {
         },
         series: [],
         xAxis: {
-          categories: fillRange(1980, 2016),
+          categories: fillRange(1976, 2023),
           labels: {
-            step: 3,
+            step: 5,
           },
         },
         yAxis: {

@@ -1,7 +1,7 @@
 <script>
 // @import vSelect from 'vue-select`;
 import VueSelect from 'vue-select';
-// This component is used to select a country or an industry from their respective lists.
+// This component is used to select a country or an sector from their respective lists.
 import { FilterBus } from '@/assets/js/FilterBus';
 import { lists } from '@/assets/data/listData';
 
@@ -38,9 +38,9 @@ export default {
         this.items.splice(5, 0, 'United States');
       }
       FilterBus.$on('circle-clicked', country => (this.selected = country));
-    } else if (this.paramList == 'industries') {
-      this.items = lists.industries.map(el => el.industry);
-      this.eventName = 'change-industry';
+    } else if (this.paramList == 'sectors') {
+      this.items = lists.sectors.map(el => el.sector);
+      this.eventName = 'change-sector';
     }
     // Event for computeData to listen for.
     FilterBus.$emit(this.eventName, this.selected);

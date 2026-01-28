@@ -30,7 +30,7 @@ export default {
   div.bg-white.uk-padding-small.uk-animation-fade.uk-padding-small.uk-padding-remove-left
     ul.uk-card-header
       li.uk-text-small.fg-black 
-        | {{ company.value.industry}}
+        | {{ company.value.sector}}
       li.fg-blue.uk-text-bold.uk-text-uppercase.uk-text-break 
         | {{ company.key | removePeriods }}
       li.uk-text-meta 

@@ -1,5 +1,5 @@
 <script>
-import { format as d3Format } from 'd3';
+// import { format as d3Format } from 'd3';
 import { Chart } from 'highcharts-vue';
 
 import Highcharts from 'highcharts';

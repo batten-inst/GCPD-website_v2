@@ -2,7 +2,7 @@
 import introJs from 'intro.js';
 import { TweenLite } from 'gsap';
 
-import { lists } from '@/assets/data/listData.js';
+// import { lists } from '@/assets/data/listData.js';
 import { FilterBus } from '@/assets/js/FilterBus.js';
 
 import ComputeData from '@/components/ComputeData';
@@ -16,8 +16,8 @@ import MapWithCircles from '@/components/outputs/MapWithCircles';
 let keyCounter = 0;
 // default parameters
 const defaultCountry = 'All Countries';
-const defaultIndustry = 'All Industries';
-const defaultRangeYears = [2010, 2017];
+const defaultSector = 'All Sectors';
+const defaultRangeYears = [2014, 2023];
 
 export default {
   components: {
@@ -30,10 +30,10 @@ export default {
   data() {
     return {
       defaultCountry,
-      defaultIndustry,
+      defaultSector,
       defaultRangeYears,
       yearsComponentKey: `years-${keyCounter}`,
-      industryComponentKey: `industry-${keyCounter}`,
+      sectorComponentKey: `sector-${keyCounter}`,
       countryComponentKey: `country-${keyCounter}`,
       // computeComponentKey: 'compute' + 0,
       listComponentKey: `list-${keyCounter}`,
@@ -66,19 +66,11 @@ export default {
     });
   },
   methods: {
-    // todo: by single year; by single decade
-    // exploreBySingleYear(event) {
-    //   console.log('change received');
-    //   this.startYear = Number(event.target.value);
-    //   this.endYear = this.startYear;
-    // },
-
     resetData() {
       keyCounter += 1;
       this.yearsComponentKey = `years-${keyCounter}`;
       this.countryComponentKey = `country-${keyCounter}`;
-      this.industryComponentKey = `industry-${keyCounter}`;
-      // this.computeComponentKey = `compute-${keyCounter}`;
+      this.sectorComponentKey = `sector-${keyCounter}`;
       this.listComponentKey = `list-${keyCounter}`;
       FilterBus.$emit('reset-data');
     },
@@ -87,6 +79,7 @@ export default {
       introJs().start();
     },
   },
+
   head() {
     return {
       link: [
@@ -105,7 +98,7 @@ export default {
 div.uk-section.uk-padding-remove-vertical.uk-margin-medium
   div.uk-container.uk-container-expand
     div.uk-h2#heading-interactive(
-      data-intro="Use this tool to explore the Global Corporate Patent Dataset across years, industries and countries."
+      data-intro="Use this tool to explore the Global Corporate Patent Dataset across years, sectors and countries."
       ) <span class="my-text-heavy fg-orange-300"> Explore </span> the World of Corporate Patents
       
     div.uk-grid.uk-margin-remove(uk-grid)
@@ -114,7 +107,7 @@ div.uk-section.uk-padding-remove-vertical.uk-margin-medium
           div(
             class="uk-width-1-4@m"
             data-step=2
-            data-intro="Select a country and/or an industry. <br><br> The data and visualizations will change to reflect your selection."
+            data-intro="Select a country and/or an sector. <br><br> The data and visualizations will change to reflect your selection."
             )
             div.uk-padding-small.uk-box-shadow-small.bg-orange-fade-out-9.uk-box-shadow-hover-medium
               select-parameter(
@@ -124,9 +117,9 @@ div.uk-section.uk-padding-remove-vertical.uk-margin-medium
                 )
               br
               select-parameter(
-                :key="industryComponentKey"
-                :selected_="defaultIndustry"
-                param-list="industries" 
+                :key="sectorComponentKey"
+                :selected_="defaultSector"
+                param-list="sectors" 
                 )
 
           div(
@@ -175,7 +168,7 @@ div.uk-section.uk-padding-remove-vertical.uk-margin-medium
           data-position="auto" 
           data-scrollTo="#top" 
           data-step=6 
-          data-intro="List of the most innovative companies within the selected industry, region, and time period."
+          data-intro="List of the most innovative companies within the selected sector, region, and time period."
           )
         
 </template>

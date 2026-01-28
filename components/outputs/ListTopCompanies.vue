@@ -6,7 +6,7 @@ import { lists } from '@/assets/data/listData';
 
 import CardCompanyFacts from '@/components/outputs/CardCompanyFacts';
 
-const industries = lists.industries;
+const sectors = lists.sectors;
 
 export default {
   components: {
@@ -18,7 +18,7 @@ export default {
   data() {
     return {
       geography: '',
-      industry: '',
+      sector: '',
       startYear: null,
       endYear: null,
       topCompanies: [],
@@ -26,9 +26,9 @@ export default {
     };
   },
   computed: {
-    industry_desc: function() {
-      return this.industry !== undefined && this.industry !== ''
-        ? industries.find(el => el.industry === this.industry).industry_desc
+    sector_desc: function () {
+      return this.sector !== undefined && this.sector !== ''
+        ? sectors.find(el => el.sector === this.sector).sector_desc
         : '';
     },
   },
@@ -36,8 +36,8 @@ export default {
   beforeCreate() {
     // listen for new data from compute-data component
     FilterBus.$on('new-data', dataObj => {
-      const { industry, geography, rangeYears, cf, companyGrp } = dataObj;
-      this.industry = industry;
+      const { sector, geography, rangeYears, cf, companyGrp } = dataObj;
+      this.sector = sector;
       this.geography = geography;
       this.startYear = rangeYears[0];
       this.endYear = rangeYears[1];
@@ -61,7 +61,7 @@ div(
     //- Show end year only if it's different from start year; same start and end means single year selection
     //- h3.uk-h3.fg-orange-900.uk-margin-small-top  {{ startYear }}<span v-show="startYear != endYear">–{{ endYear }}</span>
     h3.uk-h3.fg-blue-900  {{ geography }} <br />
-      span.fg-orange-300  {{ industry_desc }}
+      span.fg-orange-300  {{ sector_desc }}
 
     h5.uk-h5.my-text-heavy.fg-blue-900.uk-margin-remove(
       v-show="numCompaniesInSelectedData > 0"
@@ -87,7 +87,7 @@ div(
         h3.uk-margin-remove.fg-blue-900.uk-text-large.uk-float-right
           | {{ company.value.patentcount | thousandComma }}
         span.fg-blue.uk-text-small
-          | {{ company.value.industry }}
+          | {{ company.value.sector }}
       card-company-facts.card-company(
         :company="company",
         :startYear="startYear",

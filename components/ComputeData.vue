@@ -4,9 +4,6 @@
 import Crossfilter from 'crossfilter';
 
 import { dataProm } from '@/assets/js/fetchData';
-// import { lists } from '@/assets/data/listData';
-
-// import components; FilterBus is an event bus
 import { FilterBus } from '@/assets/js/FilterBus';
 
 export default {
@@ -21,14 +18,23 @@ export default {
   created() {
     dataProm.then(data => {
       this.showMessageCalculating(1500);
-      //:: Initialize crossfilter with data and its dimensions and groups :://
+      //:: Initialize Crossfilter with the loaded `data`.
+      // Crossfilter provides in-memory filtering and fast aggregations
+      // by creating dimensions (ways to slice the data) and groups
+      // (aggregations over those slices).
       this.cf = Crossfilter(data);
+      console.log('Crossfilter initialized with data', data);
+      // Dimensions: each dimension lets us filter/partition the dataset
+      // by a particular key. Filters applied to a dimension affect all
+      // groups derived from the Crossfilter instance (global filtering).
       this.companyDim = this.cf.dimension(d => d.company);
       this.sectorDim = this.cf.dimension(d => d.sector);
       this.countryDim = this.cf.dimension(d => d.country);
       this.regionDim = this.cf.dimension(d => d.region);
       this.yearsDim = this.cf.dimension(d => d.year);
 
+      // Groups: simple group() creates bins keyed by the dimension value.
+      // We'll attach reducers to groups where we need custom aggregations.
       this.companyGrp = this.companyDim.group();
       this.countryGrp = this.countryDim.group();
       this.sectorGrp = this.sectorDim.group();
@@ -36,10 +42,14 @@ export default {
       this.yearGrp = this.yearsDim.group();
 
       // reduceSum gets an accessor function telling which field to sum
+      // Custom reducer functions for `companyGrp`:
+      // We need more than a simple sum: keep totals and counts for several
+      // numeric fields so we can compute means on the fly while also
+      // summing `patentcount`.
       function reduceInitial() {
-        // construct an object with initial values
+        // Create an object holding aggregate values and helpers.
 
-        // values will be mean; except patentcount, which will be sum
+        // Initialize numeric aggregate placeholders (will hold means except patentcount).
         let obj = [
           'patentcount',
           'assets',
@@ -52,7 +62,7 @@ export default {
           return acc;
         }, {});
 
-        // intermediate values to compute mean
+        // `counts` tracks how many non-missing values contributed to each mean.
         obj.counts = ['assets', 'capex', 'rdex', 'sales', 'ebitda'].reduce(
           (acc, v) => {
             acc[v] = 0;
@@ -61,6 +71,7 @@ export default {
           {},
         );
 
+        // `totals` stores running totals for mean calculation.
         obj.totals = ['assets', 'capex', 'rdex', 'sales', 'ebitda'].reduce(
           (acc, v) => {
             acc[v] = 0;
@@ -69,6 +80,7 @@ export default {
           {},
         );
 
+        // Preserve some identifying metadata for the company group.
         obj.gvkey = '';
         obj.city = '';
         obj.country = '';
@@ -77,31 +89,37 @@ export default {
 
         return obj;
       }
+
+      // Add: incorporate a new record `v` into the aggregator `p`.
       function reduceAdd(p, v) {
         p.gvkey = v.gvkey;
         p.city = v.city;
         p.country = v.country;
         p.region = v.region;
         p.sector = v.sector;
+        // Sum patents (we want total patents per group)
         p.patentcount += v.patentcount;
 
+        // For each metric compute running totals and counts, then update mean.
         ['assets', 'capex', 'rdex', 'sales', 'ebitda'].forEach(dim => {
           [p.totals[dim], p.counts[dim]] = reduceAvgAdd(p, v, dim);
-          p[dim] = p.totals[dim] / p.counts[dim];
+          p[dim] = p.counts[dim] ? p.totals[dim] / p.counts[dim] : 0;
         });
 
         return p;
       }
+
+      // Helper: update totals/counts when adding a value (skip missing values).
       function reduceAvgAdd(p, v, dim) {
-        // Checks if values is missing;
         if (v[dim]) {
           p.counts[dim] += 1;
           p.totals[dim] += v[dim];
         }
         return [p.totals[dim], p.counts[dim]];
       }
+
+      // Helper: update totals/counts when removing a value (skip missing values).
       function reduceAvgRemove(p, v, dim) {
-        // Checks if values is missing;
         if (v[dim]) {
           p.counts[dim] -= 1;
           p.totals[dim] -= v[dim];
@@ -109,16 +127,22 @@ export default {
         return [p.totals[dim], p.counts[dim]];
       }
 
+      // Remove: remove record `v` from aggregator `p` (used when filters change).
       function reduceRemove(p, v) {
         p.patentcount -= v.patentcount;
         ['assets', 'capex', 'rdex', 'sales', 'ebitda'].forEach(dim => {
           [p.totals[dim], p.counts[dim]] = reduceAvgRemove(p, v, dim);
-          p[dim] = p.totals[dim] / p.counts[dim];
+          p[dim] = p.counts[dim] ? p.totals[dim] / p.counts[dim] : 0;
         });
         return p;
       }
+
+      // Attach the custom reducer to the company group so each company
+      // aggregates patents (sum) and computes means for financials.
       this.companyGrp.reduce(reduceAdd, reduceRemove, reduceInitial);
 
+      // For simple groups where only patent totals are needed we can use
+      // the built-in `reduceSum` helper to sum `patentcount` per key.
       this.countryGrp.reduceSum(d => d.patentcount);
       this.sectorGrp.reduceSum(d => d.patentcount);
       this.regionGrp.reduceSum(d => d.patentcount);

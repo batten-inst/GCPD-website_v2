@@ -54,15 +54,16 @@ const regionSectorDataProm = d3.csv(require('@/assets/data/region_sector.csv'))
 //   require('@/assets/data/df_companytotals_2007to16.csv'),
 // );
 
-// const top10CompaniesDataProm = d3
-//   .csv(require('@/assets/data/df_2007to16_top10.csv'))
-//   .then(data => {
-//     data.forEach(el => {
-//       el.year = +el.year;
-//       el.patentcount = +el.patentcount;
-//     });
-//     return data;
-//   });
+const top10CompaniesDataProm = d3
+  .csv(require('@/assets/data/top10_2014to2023.csv'))
+  .then(data => {
+    data.forEach(el => {
+      el.year = +el.year;
+      el.patentcount = +el.patentcount;
+      el.sector = sectorsObj[el.sector_code];
+    });
+    return data;
+  });
 
 export {
   dataProm,
@@ -70,7 +71,7 @@ export {
   yearSectorDataProm,
   yearRegionDataProm,
   regionSectorDataProm,
+  top10CompaniesDataProm,
   // company1980to89DataProm,
   // company2007to16DataProm,
-  // top10CompaniesDataProm,
 };

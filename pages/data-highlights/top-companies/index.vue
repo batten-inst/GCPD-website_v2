@@ -1,17 +1,19 @@
 <script>
-import dl from 'datalib';
+
 import { VueSelect } from 'vue-select';
 import { fillRange, formatNumber } from '@/assets/js/utility';
 import { lists } from '@/assets/data/listData';
 
+import { top10CompaniesDataProm } from '@/assets/js/fetchData';
+
 export default {
   components: {
     VueSelect,
-    // ComputeListTopCompanies,
   },
   data() {
     return {
-      data_: dl.csv(require('@/assets/data/20190505_df_2007to16_top10.csv')),
+      // data_: dl.csv(require('@/assets/data/top10_2014to2023.csv')),
+      data_: [],
       regionList: [
         'All Regions',
         'North America',
@@ -22,8 +24,7 @@ export default {
       sectorList: lists.sectors.map(el => el.sector),
       region: 'All Regions',
       sector: 'All Sectors',
-      showFinancials: false,
-      years: fillRange(2012, 2016),
+      years: fillRange(2019, 2023),
       showLastFiveYears: true,
     };
   },
@@ -59,9 +60,19 @@ export default {
     updateYearsToShow() {
       this.showLastFiveYears = !this.showLastFiveYears;
       this.years = this.showLastFiveYears
-        ? fillRange(2012, 2016)
-        : fillRange(2007, 2011);
+        ? fillRange(2019, 2023)
+        : fillRange(2014, 2018);
     },
+  },
+  created() {
+    top10CompaniesDataProm
+      .then(data => {
+        this.data_ = data;
+      })
+      .catch(err => {
+        /* eslint-disable no-console */
+        console.error('Failed to load top10CompaniesDataProm', err);
+      });
   },
 };
 </script>
@@ -88,14 +99,9 @@ export default {
           vue-select(:options="sectorList" v-model="sector" :clearable="false")
 
         div.uk-card.uk-card-body.uk-padding-small
-          button.uk-button.uk-button-small(@click="showFinancials = !showFinancials") 
-            span(v-if="!showFinancials") Show Financial Summary
-            span(v-else) Hide Financial Summary
-          br
-          br
           button.uk-button.uk-button-small(@click="updateYearsToShow") 
-            span(v-if="showLastFiveYears") Show Years 2007–2011
-            span(v-else) Show Years 2012–2016
+            span(v-if="showLastFiveYears") Show Years 2014–2018 
+            span(v-else) Show Years 2019–2023
 
         div.uk-card.uk-card-body.uk-padding-small
           div
@@ -125,23 +131,6 @@ export default {
                 span.uk-text-emphasis.patentcount {{ companyObj.patentcount | thousandComma }}
               span.uk-label.bg-white.fg-blue.uk-position-top-right.my-text-heavy.uk-box-shadow-small
                 | {{ i+1 }}
-            ul(v-if="showFinancials").uk-list.uk-animation-slide-top-small.fg-orange-900.uk-text-right.uk-text-small.uk-padding-small.uk-padding-remove-top.financials
-              li Assets 
-                span.fg-blue
-                  | $ <span>{{ formatNumber(companyObj.assets, 1e6) }}</span>
-              li R&amp;D Exp. 
-                span.fg-blue 
-                  | $ <span>{{ formatNumber(companyObj.rdex, 1e6) }}</span>
-              li Capital Exp. 
-                span.fg-blue 
-                  | $ <span>{{ formatNumber(companyObj.capex, 1e6) }}</span>
-              li Sales 
-                span.fg-blue
-                  | $ <span>{{ formatNumber(companyObj.sales, 1e6) }}</span>
-              li EBITDA 
-                span.fg-blue
-                  | $ <span class="">{{ formatNumber(companyObj.ebitda, 1e6) }}</span>
-
     
 
 </template>

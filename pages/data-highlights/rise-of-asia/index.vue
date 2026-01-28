@@ -96,7 +96,7 @@ export default {
           },
         },
         title: {
-          text: 'Regional Distribution of Patents by Year (1980–2023)',
+          text: 'Regional Share of Patents by Year (1976–2023)',
         },
       },
       yearRegionStreamOpts: {
@@ -115,7 +115,7 @@ export default {
           },
         },
         title: {
-          text: 'Number of Patents by Region and Year (1980–2023)',
+          text: 'Number of Patents by Region and Year (1976–2023)',
         },
       },
     };

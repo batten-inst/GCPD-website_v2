@@ -120,22 +120,20 @@ div.uk-section.uk-padding-remove-vertical.uk-margin-medium
                 @click="resetData"
                 ) Reset Data &amp; Map
         hr    
-        div.uk-width-1-1.uk-margin-top(
+        .uk-card.uk-card-small.uk-width-1-1#map-card(
             data-step=4 
             data-intro="The circles on the map show total patent counts by country. To see the data for a country, hover over its circle. <br><br> Double click to zoom and drag to pan. Get back to full view using the reset button.<br><br> When the data changes, the circles rescale based on the then current minimum and maximum."
             )
-          p(class="uk-hidden@m") Please view the map on a larger screen. It's not optimized for small screens, but you can pan/move the map to see other regions. 
+          p(class="uk-hidden@m").uk-padding-small Please view the map on a larger screen. It's not optimized for small screens, but you can pan/move the map to see other regions. 
 
-          map-with-circles.uk-align-center(
-            :width="900" 
-            :height="500"
-            )
-          p.uk-text-large
-            | Global ranking by countries' total patents in the selected sector. 
-          p.uk-margin-small
-            | Click on a circle to see that country's top companies. Circle sizes rescale based on selected data. You can zoom in by double clicking and pan by dragging the map. Use the reset button to get back to full view.
+          map-with-circles.uk-align-center
+          
+          .uk-card-footer
+            p.uk-text-large
+              | Global ranking by countries' total patents in the selected sector
+            p.uk-margin-small.uk-text-meta
+              | Click on a circle to see that country's top companies. Circle sizes rescale based on selected data. You can zoom in by double clicking and pan by dragging the map. Use the reset button to get back to full view.
       div(class="uk-width-1-4@m")
-        //- compute-data(:key="computeComponentKey")
         compute-data
         list-top-companies-interactive.uk-box-shadow-small.uk-animation-slide-left(
           :key="listComponentKey"
@@ -149,6 +147,11 @@ div.uk-section.uk-padding-remove-vertical.uk-margin-medium
 </template>
 
 <style scoped>
+#map-card {
+  cursor: grab;
+  border-left: 1px solid gray;
+
+}
 .introjs-button {
   font-size: 1.1em !important;
 }

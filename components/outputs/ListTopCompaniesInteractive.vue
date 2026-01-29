@@ -18,6 +18,7 @@ export default {
       startYear: null,
       endYear: null,
       topCompanies: [],
+      sumPatentsInSelectedData: null,
       numCompaniesInSelectedData: null,
     };
   },
@@ -66,7 +67,7 @@ div(
   )
   div.uk-card-header.uk-padding-small.uk-animation-fade.uk-tile-muted
     
-    h2.uk-h2.my-text-thin.uk-animation-fade.fg-blue-400.uk-margin-remove(
+    h3.uk-h3.my-text-thin.uk-animation-fade.fg-blue-400.uk-margin-remove(
       class="uk-visible@m"
       v-show="sumPatentsInSelectedData > 0"
       ) {{ sumPatentsInSelectedData | thousandComma }} patents
@@ -97,14 +98,14 @@ div(
           a.fg-black.uk-text-bold.uk-text-uppercase(
                 target="_blank"
                 rel="noreferrer" 
-                :href="'https://www.google.com/search?q=%22'+ removeLastWord(company.key) +'%22+%22'+company.value.country+'%22'")
+                :href="'https://www.google.com/search?q=%22'+ company.key +'%22+%22'+company.value.country+'%22'")
                 | {{ company.key }}
  
         h3.uk-margin-remove.fg-blue-900.uk-text-large.uk-float-right
           a(
                 target="_blank" 
                 rel="noreferrer" 
-                :href="`https://patents.google.com/?assignee=${ removeLastWord(company.key) }&after=filing:${startYear}0101&before=filing:${endYear}1231&type=PATENT&num=50&sort=new`")
+                :href="`https://patents.google.com/?assignee=${ company.key }&after=filing:${startYear}0101&before=filing:${endYear}1231&type=PATENT&num=50&sort=new`")
             | {{ company.value.patentcount | thousandComma }}
         li.uk-text-small
           | {{ company.value.city }}, {{ company.value.country }}

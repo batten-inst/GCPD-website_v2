@@ -53,11 +53,8 @@ export default {
 
 <template lang="pug">
   div.uk-padding-small.uk-box-shadow-small.bg-orange-fade-out-9.uk-box-shadow-hover-medium
-    //- p.uk-text-small Showing 
-    //-   input#year-input.uk-input(type="number" v-model="startYear")
-    //-   span  through 
-    //-   input#year-input.uk-input(type="number" v-model="endYear")
-    p Select years. Patents are counted by patent grant year.
+    span Select years. 
+    span.uk-text-meta Patents counted by grant year.
     vue-slider(
       v-model="rangeYears" 
       :lazy="true"

@@ -80,12 +80,11 @@ export default {
 
     FilterBus.$on('reset-data', () => {
       this.resetZoom('#svg', this.currentZoom);
-      // todo: add reset data event listener for all other data resets
     });
 
     //:: Listen for new data from compute-data component :://
     FilterBus.$on('new-data', dataObj => {
-      const { countryGrp, geography } = dataObj;
+      const { countryGrp } = dataObj;
       // todo: if country changes then highlight country
       this.$options.countryData = countryGrp.top(Infinity);
       const maxValue = d3.max(this.$options.countryData, el => el.value);
@@ -244,13 +243,13 @@ div
 
 .circle {
   opacity: 0.2;
-    transition: all 1s;
+  transition: all 1s;
   stroke: #000;
   stroke-width: 0.5px;
 }
 
 .circle:hover {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .text {

@@ -133,6 +133,7 @@ div.uk-section.uk-padding-remove-vertical.uk-margin-medium
               | Global ranking by countries' total patents in the selected sector
             p.uk-margin-small.uk-text-meta
               | Click on a circle to see that country's top companies. Circle sizes rescale based on selected data. You can zoom in by double clicking and pan by dragging the map. Use the reset button to get back to full view.
+            nuxt-link(to="/data-highlights/note-sector-classification") Note on sector classification.
       div(class="uk-width-1-4@m")
         compute-data
         list-top-companies-interactive.uk-box-shadow-small.uk-animation-slide-left(

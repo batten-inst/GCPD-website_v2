@@ -86,11 +86,12 @@ export default {
       p Patent assignment indicates ownership of a patent, that is, the rights to all benefits accruing from that patent. It does not necessarily mean the invention originated within the assignee company. However, patent ownership does indicate a company's interest in developing innovative products and processes. Hence, irrespective of a company's role in an invention, we here assume the company's ownership of the related patent signals a strong intent to pursue innovation.
       p Between 2014 and 2023 (the last ten full years for which we have data), about 2.2 million USPTO patents were granted and subsequently assigned to publicly listed companies. The patents were well distributed across countries, illustrating the global nature of innovation.
       p Non-U.S. firms owned rights to more than half of these patents. Surpassing U.S. firms, Japanese companies had the highest number of patents per firm. Overall, European firms filed fewer patents than North American or Asian firms.
-      p IBM has consistently been the top firm in recent times. Asian firms rose notably among the top innovators, with a strong presence in the consumer electronics sector (e.g., Samsung, Sony, and Panasonic). More recently, U.S. companies have staged a comeback, particularly those in the technology sector (e.g., Intel, Alphabet, and Qualcomm). 
+      p IBM has consistently been among the top firms in recent times. Asian firms rose notably among the top innovators, with a strong presence in the consumer electronics sector (e.g., Samsung, Sony, and Panasonic). More recently, U.S. companies have staged a comeback, particularly those in the technology sector (e.g., Intel, Alphabet, and Qualcomm). 
 
     div.uk-padding-small.uk-margin-top
       h3 Top Ten Companies <span class="fg-orange-900">by Yearly Counts of Patents Assigned</span>
-      p The years indicate when the patents were granted by the USPTO.
+      p The years indicate when the patents were granted by the USPTO. 
+        nuxt-link(to="/data-highlights/note-sector-classification") See details on sector classification used.
      
       #control-panel.uk-grid(uk-grid).uk-margin-auto.uk-flex-bottom
         div(class="uk-width-1-4@s").uk-card.uk-card-body.uk-padding-small
@@ -105,16 +106,12 @@ export default {
 
         div.uk-card.uk-card-body.uk-padding-small
           div
-            .uk-h5 What the colors mean
+            .uk-h5.uk-text-meta What the colors mean
             span.my-text-tiny.uk-label.region-label.asia-pacific Asia Pacific
             span.my-text-tiny.uk-label.region-label.europe Europe
             span.my-text-tiny.uk-label.region-label.north-america North America
             span.my-text-tiny.uk-label.region-label.other Other
-        div.uk-card.uk-card-body.uk-padding-small
-          .uk-h5 See more data highlights
-          ul.uk-list
-            li: nuxt-link(to="/data-highlights/rise-of-asia") The Rise of Asia 
-            li: nuxt-link(to="/data-highlights/tech-leading-innovation") Technology Sector Leading in Innovation 
+        
     div.bg-white.uk-padding-small.uk-padding-remove-left
       .uk-grid.uk-grid-small(uk-grid class="uk-child-width-1-3@s uk-child-width-expand@m")
         .uk-panel(v-for="yearArr in dataByYear.slice(0, 5)")

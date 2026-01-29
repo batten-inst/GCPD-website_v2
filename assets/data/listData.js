@@ -11,12 +11,6 @@ export const lists = {
       sector_desc: 'All sectors',
     },
     {
-      sector_code: 'NA',
-      sector: 'Unknown',
-      sector_desc_long: 'Sector not classified',
-      sector_desc: 'Sector not classified',
-    },
-    {
       sector_code: '10',
       sector: 'Energy',
       sector_desc_long:
@@ -100,6 +94,12 @@ export const lists = {
       sector_desc_long:
         'Contains companies engaged in real estate development and operation. It also includes companies offering real estate related services and Equity Real Estate Investment Trusts (REITs).',
       sector_desc: 'Property development, management, and REITs',
+    },
+    {
+      sector_code: 'NA',
+      sector: 'Unknown',
+      sector_desc_long: 'Sector not classified',
+      sector_desc: 'Sector not classified',
     },
   ],
 

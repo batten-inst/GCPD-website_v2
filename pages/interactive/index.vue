@@ -1,8 +1,6 @@
 <script>
 import introJs from 'intro.js';
-import { TweenLite } from 'gsap';
 
-// import { lists } from '@/assets/data/listData.js';
 import { FilterBus } from '@/assets/js/FilterBus.js';
 
 import ComputeData from '@/components/ComputeData';
@@ -10,20 +8,20 @@ import ComputeData from '@/components/ComputeData';
 import SelectParameter from '@/components/inputs/SelectParameter';
 import InputRange from '@/components/inputs/InputRange';
 
-import ListTopCompanies from '@/components/outputs/ListTopCompanies';
+import ListTopCompaniesInteractive from '@/components/outputs/ListTopCompaniesInteractive';
 import MapWithCircles from '@/components/outputs/MapWithCircles';
 
 let keyCounter = 0;
 // default parameters
 const defaultCountry = 'All Countries';
 const defaultSector = 'All Sectors';
-const defaultRangeYears = [2014, 2023];
+const defaultRangeYears = [1976, 2023];
 
 export default {
   components: {
     SelectParameter,
     InputRange,
-    ListTopCompanies,
+    ListTopCompaniesInteractive,
     MapWithCircles,
     ComputeData,
   },
@@ -35,35 +33,12 @@ export default {
       yearsComponentKey: `years-${keyCounter}`,
       sectorComponentKey: `sector-${keyCounter}`,
       countryComponentKey: `country-${keyCounter}`,
-      // computeComponentKey: 'compute' + 0,
       listComponentKey: `list-${keyCounter}`,
       listLength: 25,
-      sumPatentsInSelectedData: null,
-      tweenedNumber: 0,
     };
-  },
-  computed: {
-    sumPatentsInSelectedDataAnimated: function() {
-      return this.tweenedNumber.toFixed(0);
-    },
-  },
-  watch: {
-    sumPatentsInSelectedData: function(newVal) {
-      TweenLite.to(this.$data, 2, {
-        tweenedNumber: newVal,
-      });
-    },
   },
   mounted() {
     this.startGuide();
-    FilterBus.$on('new-data', dataObj => {
-      const { cf } = dataObj;
-
-      this.sumPatentsInSelectedData = cf
-        .groupAll()
-        .reduceSum(d => d.patentcount)
-        .value();
-    });
   },
   methods: {
     resetData() {
@@ -75,7 +50,6 @@ export default {
       FilterBus.$emit('reset-data');
     },
     startGuide() {
-      // todo: use json to define steps (https://github.com/usablica/intro.js/blob/master/example/programmatic/index.html)
       introJs().start();
     },
   },
@@ -97,9 +71,9 @@ export default {
 <template lang="pug">
 div.uk-section.uk-padding-remove-vertical.uk-margin-medium
   div.uk-container.uk-container-expand
-    div.uk-h2#heading-interactive(
+    div.uk-heading-small(
       data-intro="Use this tool to explore the Global Corporate Patent Dataset across years, sectors and countries."
-      ) <span class="my-text-heavy fg-orange-300"> Explore </span> the World of Corporate Patents
+    ) Explore the World of Corporate Patents
       
     div.uk-grid.uk-margin-remove(uk-grid)
       div(class="uk-width-3-4@m uk-flex-last@m")
@@ -107,7 +81,7 @@ div.uk-section.uk-padding-remove-vertical.uk-margin-medium
           div(
             class="uk-width-1-4@m"
             data-step=2
-            data-intro="Select a country and/or an sector. <br><br> The data and visualizations will change to reflect your selection."
+            data-intro="Select a region/country or a sector. <br><br> The data and visuals will change to reflect your selection."
             )
             div.uk-padding-small.uk-box-shadow-small.bg-orange-fade-out-9.uk-box-shadow-hover-medium
               select-parameter(
@@ -147,41 +121,33 @@ div.uk-section.uk-padding-remove-vertical.uk-margin-medium
         hr    
         div.uk-width-1-1.uk-margin-top(
             data-step=4 
-            data-intro="The circles on the map show total patent counts by country. To see the data for a country, hover over its circle. <br><br> Double click to zoom and drag to pan. Get back to full view using the reset button above.<br><br> When the data changes, the circles rescale based on the then current minimum and maximum."
+            data-intro="The circles on the map show total patent counts by country. To see the data for a country, hover over its circle. <br><br> Double click to zoom and drag to pan. Get back to full view using the reset button.<br><br> When the data changes, the circles rescale based on the then current minimum and maximum."
             )
           p(class="uk-hidden@m") Please view the map on a larger screen. It's not optimized for small screens, but you can pan/move the map to see other regions. 
-          div.my-text-thin.uk-animation-fade.fg-blue-400.uk-position-fixed#total-count-patents(
-            class="uk-visible@m"
-            v-show="sumPatentsInSelectedData > 0"
-            ) {{  sumPatentsInSelectedDataAnimated | thousandComma  }} patents
 
           map-with-circles.uk-align-center(
             :width="900" 
             :height="500"
             )
+          p.uk-text-large
+            | Global ranking by countries' total patents in the selected sector. 
+          p.uk-margin-small
+            | Click on a circle to see that country's top companies. Circle sizes rescale based on selected data. You can zoom in by double clicking and pan by dragging the map. Use the reset button to get back to full view.
       div(class="uk-width-1-4@m")
         //- compute-data(:key="computeComponentKey")
         compute-data
-        list-top-companies.uk-box-shadow-small.uk-animation-slide-left(
+        list-top-companies-interactive.uk-box-shadow-small.uk-animation-slide-left(
           :key="listComponentKey"
           :listLength="listLength" 
           data-position="auto" 
           data-scrollTo="#top" 
           data-step=6 
-          data-intro="List of the most innovative companies within the selected sector, region, and time period."
+          data-intro="List of the most innovative companies within the selected sector, region, and period."
           )
         
 </template>
 
-<style>
-#total-count-patents {
-  font-size: 2rem;
-}
-
-#heading-interactive {
-  font-size: 2.4rem;
-}
-
+<style scoped>
 .introjs-button {
   font-size: 1.1em !important;
 }

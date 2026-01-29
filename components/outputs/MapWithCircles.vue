@@ -184,7 +184,7 @@ export default {
         return Object.keys(regions.find(matched))[0]
           .toLowerCase()
           .replace(' ', '-');
-      } catch {
+      } catch (error) {
         return 'no-match';
       }
     },
@@ -243,8 +243,8 @@ div
 }
 
 .circle {
-  opacity: 0.5;
-  transition: all 1.5s;
+  opacity: 0.2;
+    transition: all 1s;
   stroke: #000;
   stroke-width: 0.5px;
 }

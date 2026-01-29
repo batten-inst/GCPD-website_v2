@@ -119,9 +119,9 @@ export default {
       .uk-grid.uk-grid-small(uk-grid class="uk-child-width-1-3@s uk-child-width-expand@m")
         .uk-panel(v-for="yearArr in dataByYear.slice(0, 5)")
           .uk-label.bg-orange-900.uk-text-large.uk-box-shadow-small(v-if="yearArr[0] !== undefined") {{ yearArr[0].year }}
-          .uk-card.uk-animation-fade.uk-card-default.uk-margin-small-bottom(v-for="(companyObj, i) in yearArr")
-            ul.company-info-card.uk-list.uk-padding-small.uk-margin-remove.uk-inline-clip(:class="companyObj.region | makeKebab")
-              li.uk-text-small
+          .uk-card.uk-card-default.uk-margin-small-bottom(v-for="(companyObj, i) in yearArr")
+            ul.uk-animation-slide-left.company-info-card.uk-list.uk-padding-small.uk-margin-remove.uk-inline-clip(:class="companyObj.region | makeKebab")
+              li.uk-text-small.uk-animation-slide-left
                 | {{ companyObj.sector}}
               li.fg-blue.uk-text-bold.uk-text-uppercase.uk-text-break.uk-margin-remove
                 | {{ companyObj.company | removePeriods }}

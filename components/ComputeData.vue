@@ -105,6 +105,7 @@ export default {
       });
 
       FilterBus.$on('reset-data', () => {
+        this.showMessageCalculating();
         this.changeGeography('All Countries');
         this.changeSector('All Sectors');
         this.changeYears(lists.defaultYearRange);
@@ -175,6 +176,6 @@ export default {
 <template lang="pug">
 div.uk-position-absolute.uk-position-top-center(v-if="calculating")
   span.uk-text-large Computing
-  span.uk-padding-large(uk-spinner="ratio:2.5")
+  span.uk-padding-large(uk-spinner="ratio:15")
 
 </template>

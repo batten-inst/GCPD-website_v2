@@ -1,4 +1,6 @@
 ## What the Dataset Contains
+This version of the Global Corporate Patent Dataset (GCPD) has been significantly expanded to cover more companies, patents, and countries, over a broader time frame.
+
 The dataset has information on about 5.3 million USPTO patents, which were 
 - granted between 1976 and 2023,
 - assigned to *publicly listed* companies worldwide, and

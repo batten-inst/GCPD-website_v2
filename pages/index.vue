@@ -1,5 +1,4 @@
 <script>
-// import MethodSummary from '@/content/MethodSummary.md';
 export default {
   data() {
     return {
@@ -26,6 +25,7 @@ export default {
             div(class="uk-column-1-2@m")
               p.fg-blue-fade-out-2.uk-dropcap.uk-text-large.uk-column-span Corporate innovation plays a crucial role in pushing the frontier of technology — and technology's progress helps advance economic prosperity. By tracking corporate innovation, we can learn much about where and how new ideas, knowledge, products and techniques are emerging.
               p.uk-margin-remove-top The new dataset available here provides a window into the world of corporate patents — an important indicator of corporate research and development activities and the consequent innovation—across sectors and countries.
+              p.uk-margin-remove-top This website has been updated to reflect the new Global Corporate Patent Dataset (GCPD) v2, which now covers an expanded set of companies, patents, and countries over a broader time frame.
               p The public release of this dataset will hopefully open up new research possibilities and enable the discovery of insights in different areas of finance and economics. This data will also help advance public discussions, outside of academia, on corporate innovation, productivity and performance.
               nuxt-link(to="/interactive")
                 img.uk-box-shadow-small.uk-border-rounded.uk-margin-medium-top.uk-animation-slide-top(aria-hidden="true" src="https://res.cloudinary.com/asifm/image/upload/w_300/v1543798822/worldmap_static_j4peu3.png" alt="World map" @click="loading = !loading")
@@ -36,7 +36,7 @@ export default {
         .uk-card.uk-card-body.uk-margin.bg-orange-50
           h2.uk-h2.fg-blue About the Data
           div(class="uk-column-1-2@l")
-            p The Global Corporate Patent Dataset links 3.1 million patents awarded by the U.S. Patent and Trademark Office (USPTO), between 1980 and 2017, to 9.2 thousand publicly listed firms worldwide. By the location of parent companies’ headquarters, the firms patenting at the USPTO come from 50 different countries around the world.
+            p The Global Corporate Patent Dataset links 5.3 million patents awarded by the U.S. Patent and Trademark Office (USPTO), between 1976 and 2023, to 24 thousand publicly listed firms worldwide. By the location of parent companies’ headquarters, the firms patenting at the USPTO come from 99 different countries around the world.
             p A detailed description of the dataset, including its key features and how it was constructed, can be found in <a href="/documents/DataConstructionDetails_v01.pdf"> this document</a>. 
             p Please visit the other sections of this website to explore the breadth of the dataset's coverage — across countries and sectors over time. 
             button.uk-button.uk-button-primary.uk-link-reset: nuxt-link(to="/get-data") Get Data

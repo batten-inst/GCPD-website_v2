@@ -1,9 +1,9 @@
 <script>
 import GetDataText from '@/content/GetDataText.md';
-import DataCitation from '@/content/DataCitation.md';
+// import DataCitation from '@/content/DataCitation.md';
 
 export default {
-  components: { GetDataText, DataCitation },
+  components: { GetDataText},
 };
 </script>
 

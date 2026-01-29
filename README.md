@@ -9,9 +9,9 @@ The main changes:
 - Change visuals to use the 2026 version of GCPD.
 - Update links, text, and other content to reflect the 2026 update.
 
-To ensure code doesn't break, changes are committed incrementally, testing after each change.
+To ensure the code doesn't break, changes are committed incrementally, testing after each change.
 
-Not a priority: Updating dependency libraries to their latest versions, unless necessary to fix critical issues. Many of the libraries are quite out of date, but the code works as is.
+Not a priority: Updating dependency libraries, unless necessary to fix critical issues. Many of the libraries are quite out of date, but the code works as long as the exact development/deployment environment is maintained (details below).
 
 Tasks are managed via [GitHub Issues](https://github.com/asifm/GCPD-website_v2/issues).
 
@@ -20,11 +20,6 @@ Tasks are managed via [GitHub Issues](https://github.com/asifm/GCPD-website_v2/i
 - [Vue.js](https://vuejs.org/): A progressive JavaScript framework for building user interfaces.
 - [D3.js](https://d3js.org/): A JavaScript library for producing dynamic, interactive data visualizations in web browsers.
 - [Netlify](https://www.netlify.com/): A platform for deploying static websites with continuous deployment from Git repositories.
-
-## Features
-- Interactive visualizations of patent data.
-- Responsive design for optimal viewing on various devices.
-- Easy navigation through different sections of the dataset.
 
 ## Project Structure
 - `assets/`: Contains static assets like stylesheets and data files.
@@ -53,14 +48,14 @@ The application's data flow can be understood in several key stages:
     *   After computation, it emits a `new-data` event via `FilterBus`, providing the filtered `crossfilter` instance and its groups to listening components.
 
 3.  **Interactive Page Data Visualization (`pages/interactive/index.vue` and `outputs` components):**
-    *   The `pages/interactive/index.vue` orchestrates the interactive visualizations, embedding `ComputeData.vue` along with output components like `ListTopCompanies.vue` and `MapWithCircles.vue`.
+    *   The `pages/interactive/index.vue` orchestrates the interactive visualizations, embedding `ComputeData.vue` along with output components like `ListTopCompaniesInteractive.vue` and `MapWithCircles.vue`.
     *   It subscribes to the `new-data` event from `FilterBus`.
-    *   When filtered data is received, it passes the relevant `crossfilter` groups as properties to its child visualization components (`ListTopCompanies.vue`, `MapWithCircles.vue`), allowing them to dynamically render updated views.
+    *   When filtered data is received, it passes the relevant `crossfilter` groups as properties to its child visualization components (`ListTopCompaniesInteractive.vue`, `MapWithCircles.vue`), allowing them to dynamically render updated views.
 
 4.  **Data Highlights Pages Data Visualization (`pages/data-highlights/.../index.vue`):**
     *   The specialized "Data Highlights" pages (e.g., `rise-of-asia`, `tech-leading-innovation`, `top-companies`) directly import specific data Promises (e.g., `yearSectorDataProm`, `regionSectorDataProm`) from `assets/js/fetchData.js`.
     *   These pages perform any additional data transformations or aggregations required for their unique visualizations within their Vue lifecycle hooks (e.g., `beforeCreate`, `created`).
-    *   The prepared data is then passed as properties to their respective charting components (e.g., `ChartStacked`, `ChartHeatmap`, `ChartCirclepack`, `ChartBubble`) for rendering.
+    *   The prepared data is then passed as properties to their respective charting components (e.g., `ChartStacked`, `ChartHeatmap`) for rendering.
 
 5.  **Lookup Data (`assets/data/listData.js`):**
     *   This file provides static JavaScript objects containing lists of countries, sectors, and other categorical data.
@@ -70,126 +65,19 @@ The application's data flow can be understood in several key stages:
 Data files are located in the `assets/data/` directory.
 
 ### `complete.csv`
-Used in the interactive exploration page (`pages/interactive/index.vue`) to power the `ListTopCompanies.vue` and `MapWithCircles.vue` components.
-
-| Column | Status |
-| :--- | :--- |
-| `gvkey` | Used |
-| `year` | Used |
-| `assets` | Used |
-| `capex` | Used |
-| `ebitda` | Used |
-| `sales` | Used |
-| `rdex` | Used |
-| `company` | Used |
-| `city` | Used |
-| `patentcount` | Used |
-| `sector_code` | Used |
-| `country` | Used |
-| `region` | Used |
-| `sic` | Unused |
-| `naics` | Unused |
-| `country_code` | Unused |
-| `naics_2d` | Unused |
-| `sic_2d` | Unused |
+Used in the interactive exploration page (`pages/interactive/index.vue`) to power the `ListTopCompaniesInteractive.vue` and `MapWithCircles.vue` components.
 
 ### `region_sector.csv`
 Used in `pages/data-highlights/rise-of-asia/index.vue` for the Region-Sector Matrix heatmap.
 
-| Column | Status |
-| :--- | :--- |
-| `region` | Used |
-| `count_patents` | Used |
-| `sector` | Used |
-| `sector_code` | Unused |
-| `count_companies` | Unused |
-| `sum_rdex` | Unused |
-| `sum_capex` | Unused |
-| `mean_assets` | Unused |
-| `sum_sales` | Unused |
-| `sum_ebitda` | Unused |
-
 ### `year_sector.csv`
 Used in `pages/data-highlights/tech-leading-innovation/index.vue` for the Sector Share of Patents by Year stacked column chart and the Number of Patents by Sector and Year streamgraph.
-
-| Column | Status |
-| :--- | :--- |
-| `year` | Used (implicitly) |
-| `sector_code` | Used |
-| `count_patents` | Used |
-| `count_companies` | Unused |
-| `sum_rdex` | Unused |
-| `sum_capex` | Unused |
-| `mean_assets` | Unused |
-| `sum_sales` | Unused |
-| `sum_ebitda` | Unused |
 
 ### `year_region.csv`
 Used in `pages/data-highlights/rise-of-asia/index.vue` for the Regional Distribution of Patents by Year stacked column chart and the Number of Patents by Region and Year streamgraph.
 
-| Column | Status |
-| :--- | :--- |
-| `year` | Used (implicitly) |
-| `region` | Used |
-| `count_patents` | Used |
-| `count_companies` | Unused |
-| `sum_rdex` | Unused |
-| `sum_capex` | Unused |
-| `mean_assets` | Unused |
-| `sum_sales` | Unused |
-| `sum_ebitda` | Unused |
-
-### `df_2007to16_top10.csv`
+### `top10_2014to2023.csv`
 Used in `pages/data-highlights/top-companies/index.vue` for the Top Ten Companies by Yearly Counts of Patents Assigned list.
-
-| Column | Status |
-| :--- | :--- |
-| `year` | Used |
-| `assets` | Used |
-| `capex` | Used |
-| `ebitda` | Used |
-| `sales` | Used |
-| `rdex` | Used |
-| `company` | Used |
-| `patentcount` | Used |
-| `country` | Used |
-| `region` | Used |
-| `sector` | Used |
-| `sector_code` | Unused |
-| `city` | Unused |
-
-### `df_companytotals_1980to89.csv`
-Used in `pages/data-highlights/rise-of-asia/index.vue` for the Top 50 Companies of 1980–1989 circle pack chart and in `pages/data-highlights/tech-leading-innovation/index.vue` for the R&D vs. Patent Count: Top 30 Companies (1980–1989) bubble chart.
-
-| Column | Status |
-| :--- | :--- |
-| `company` | Used |
-| `total_count_patents` | Used |
-| `total_rdex` | Used |
-| `total_capex` | Used |
-| `total_sales` | Used |
-| `total_ebitda` | Used |
-| `sector_code` | Used |
-| `region` | Used |
-| `sector` | Used |
-| `country` | Unused |
-
-### `df_companytotals_2007to16.csv`
-Used in `pages/data-highlights/rise-of-asia/index.vue` for the Top 50 Companies of 2007–2016 circle pack chart and in `pages/data-highlights/tech-leading-innovation/index.vue` for the R&D vs. Patent Count: Top 30 Companies (2007–2016) bubble chart.
-
-| Column | Status |
-| :--- | :--- |
-| `company` | Used |
-| `total_count_patents`| Used |
-| `total_rdex` | Used |
-| `total_capex` | Used |
-| `total_sales` | Used |
-| `total_ebitda` | Used |
-| `sector_code` | Used |
-| `region` | Used |
-| `sector` | Used |
-| `country` | Unused |
-
 
 ## Vue Components
 Here is a breakdown of the Vue components in the `components` directory:
@@ -200,22 +88,16 @@ Here is a breakdown of the Vue components in the `components` directory:
 
 *   **`inputs/SelectParameter.vue`**: A reusable component that uses `vue-select` to create a dropdown for selecting a parameter (either country or sector). It emits a `change-geography` or `change-sector` event when a selection is made.
 
-*   **`outputs/CardCompanyFacts.vue`**: This component displays key facts about a company, such as its sector, location, and financial data. It receives company data as a prop.
-
-*   **`outputs/ChartBubble.vue`**: A reusable component that renders a bubble chart using `highcharts-vue`. It takes chart options as a prop.
-
-*   **`outputs/ChartCirclepack.vue`**: A reusable component that renders a circle-packing chart using `highcharts-vue`. It takes chart options as a prop.
-
 *   **`outputs/ChartHeatmap.vue`**: A reusable component that renders a heatmap chart using `highcharts-vue`. It takes chart options as a prop.
 
 *   **`outputs/ChartStacked.vue`**: A reusable component that renders a stacked column chart (or streamgraph) using `highcharts-vue`. It takes chart options as a prop.
 
-*   **`outputs/ListTopCompanies.vue`**: This component displays a list of top companies based on the filtered data. It receives data from the `ComputeData` component via an event bus and uses the `CardCompanyFacts` component to display details for each company.
+*   **`outputs/ListTopCompaniesInteractive.vue`**: This component displays a list of top companies based on the filtered data. It receives data from the `ComputeData` component via an event bus.
 
 *   **`outputs/MapWithCircles.vue`**: This component renders a world map with circles representing data for each country. It uses D3.js for map projection and rendering. It also listens for data changes to update the circles on the map.
 
 ## Development
-Ensure you have [Node.js](https://nodejs.org/) installed (version as specified in `.nvmrc`).
+Ensure you have [Node.js](https://nodejs.org/), of the exact version specified in `.nvmrc`, installed.
 
 To run the project locally, follow these steps:
 1. Clone the repository. Then:

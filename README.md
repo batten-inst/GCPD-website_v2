@@ -15,6 +15,10 @@ Not a priority: Updating dependency libraries, unless necessary to fix critical 
 
 Tasks are managed via [GitHub Issues](https://github.com/asifm/GCPD-website_v2/issues).
 
+## Data Preparation 
+
+The data files used in this project were prepared in [this repo](https://github.com/batten-inst/GCPD-website_v2_data-prep) from this [csv file](https://github.com/batten-inst/GCPD-website_v2_data-prep/blob/main/input/GCPD_visual_data.csv) provided by Jan B.
+
 ## Technologies & Architecture
 
 This is a **Nuxt.js** single-page application (`mode: 'spa'`) that renders data-driven visualizations.

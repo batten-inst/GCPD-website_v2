@@ -14,7 +14,7 @@ export default {
       calculating: false,
       geography: 'All Countries',
       sector: 'All Sectors',
-      rangeYears: [2010, 2017],
+      rangeYears: [1976, 2023],
     };
   },
   created() {

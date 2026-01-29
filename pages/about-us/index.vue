@@ -50,8 +50,8 @@ export default {
       
       div 
         .uk-card.uk-card-body.uk-card-default#batten
-          h1.fg-orange-900 Batten Institute for Entrepreneurship and Innovation
-          p The Batten Institute for Entrepreneurship and Innovation at the UVA Darden School of Business provided institutional support to this collaboration. The Institute's research initiative advances knowledge that addresses real-world challenges and shapes Darden's curriculum, and its educational offerings are ranked top 10 in the world. The Batten Institute was established by the vision and philanthropy of UVA alumnus Frank Batten Sr. 
+          h1.fg-orange-900 Batten Institute for Entrepreneurship, Innovation and Technology
+          p The Batten Institute for Entrepreneurship, Innovation and Technology at the UVA Darden School of Business provided institutional support to this collaboration. The Institute's research initiative advances knowledge that addresses real-world challenges and shapes Darden's curriculum, and its educational offerings are ranked top 10 in the world. The Batten Institute was established by the vision and philanthropy of UVA alumnus Frank Batten Sr. 
           
           a.uk-button.uk-link-reset.uk-button-default(href="http://www.darden.virginia.edu/batten-institute/" target="_blank") Learn more
         

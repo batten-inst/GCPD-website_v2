@@ -6,4 +6,4 @@ We believe the public release of this dataset, of patents awarded to publicly li
 
 <hr class="uk-icon-divider">
 
-This research project was made possible with the financial support from the <em>Batten Institute for Entrepreneurship and Innovation</em> and the <em>Richard A. Mayo Center for Asset Management</em> at the UVA Darden School of Business.
+This research project was made possible with the financial support from the <em>Batten Institute for Entrepreneurship, Innovation and Technology</em> and the <em>Richard A. Mayo Center for Asset Management</em> at the UVA Darden School of Business.

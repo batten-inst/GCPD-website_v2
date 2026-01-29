@@ -12,7 +12,7 @@ footer
     
         div(class="uk-tile uk-padding uk-width-2-5@m")
           div
-            p This website, including the data tools and visualizations in it, has been developed by <span class="uk-text-bold"> the Batten Institute for Entrepreneurship and Innovation </span>at the University of Virginia Darden School of Business. This is part of the long-term support the institute has been providing in various forms to the Global Corporate Patent Dataset project. 
+            p This website, including the data tools and visualizations in it, has been developed by <span class="uk-text-bold"> the Batten Institute for Entrepreneurship, Innovation and Technology </span>at the University of Virginia Darden School of Business. This is part of the long-term support the institute has been providing in various forms to the Global Corporate Patent Dataset project. 
             p The institute's mission is to improve society by creating knowledge about the transformative power of entrepreneurship and innovation and by cultivating principled, entrepreneurial leaders.
             
             div.my-text-thin.uk-text-small

@@ -15,13 +15,13 @@ export default {
 </script>
 
 <template lang="pug">
-.uk-section.uk-animation-slide-top-small.uk-padding-small.uk-margin-small-bottom.bg-orange-50
+.uk-section.uk-animation-slide-top-small.uk-padding-small.uk-margin-small-bottom#main-section
   .uk-container.uk-container-large.uk-padding-remove-top
     div(class="uk-grid uk-child-width-1-2@s")
       div
         .uk-card.uk-card-body
-          h2.uk-h2.uk-margin-remove UVA Darden
-          h1.uk-heading-medium.uk-margin-remove.fg-orange-700 Global Corporate Patent Dataset
+          h2.uk-h2.uk-margin-remove.fg-orange-700 UVA Darden
+          h1.my-text-heavy.uk-heading-medium.uk-margin-remove.fg-blue-500 Global Corporate Patent Dataset
           div
             div(class="uk-column-1-2@m")
               p.fg-blue-fade-out-2.uk-dropcap.uk-text-large.uk-column-span Corporate innovation plays a crucial role in pushing the frontier of technology — and technology's progress helps advance economic prosperity. By tracking corporate innovation, we can learn much about where and how new ideas, knowledge, products and techniques are emerging.
@@ -32,8 +32,8 @@ export default {
               p.uk-text-small [Click on the map to see a larger, interactive version. It may take a few seconds to load all data.]
               div(v-if="loading" uk-spinner="ratio:5").uk-position-center.uk-position-absolute
       
-      div.uk-margin-large-top.uk-padding-remove
-        .uk-card.uk-card-body.uk-margin.bg-white
+      div.uk-margin-large-top
+        .uk-card.uk-card-body.uk-margin.bg-orange-50
           h2.uk-h2.fg-blue About the Data
           div(class="uk-column-1-2@l")
             p The Global Corporate Patent Dataset links 3.1 million patents awarded by the U.S. Patent and Trademark Office (USPTO), between 1980 and 2017, to 9.2 thousand publicly listed firms worldwide. By the location of parent companies’ headquarters, the firms patenting at the USPTO come from 50 different countries around the world.
@@ -51,6 +51,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+#main-section {
+  min-height: 80vh;
+  background-color: #e9f0fc;
+}
 audio {
   max-width: 300px;
   object-fit: inherit;

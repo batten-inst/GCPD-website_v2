@@ -1,12 +1,12 @@
 ## What the Dataset Contains
-The dataset has information on about 3 million USPTO patents, which were 
-- granted between 1980 and 2017,
+The dataset has information on about 5.3 million USPTO patents, which were 
+- granted between 1976 and 2023,
 - assigned to *publicly listed* companies worldwide, and
 - linked to those assignee companies using the following identifiers:
   - Unique Patent Number, as given by the USPTO,
   - GVKEY, as the firm identifier, from the S&P Compustat Global database. 
 
-**Please consult [this document](/documents/DataConstructionDetails_v01.pdf) for details about the features and advantages of this dataset and how we constructed it.**
+**Please consult [this document](/documents/DataConstructionDetails_v2.pdf) for details about the features and advantages of this dataset and how we constructed it.**
 
 ## Getting and Using the Data
 Please contact us at <a href="mailto:GCPD@darden.virginia.edu">GCPD@darden.virginia.edu</a>. We'll make the dataset available after considering the intended use. The dataset is for academic or other non-commercial purposes only. Please note the following:
@@ -21,4 +21,4 @@ Please contact us at <a href="mailto:GCPD@darden.virginia.edu">GCPD@darden.virgi
 
 ## Download Firms' Yearly Counts of Patents
 
-You can download a CSV file containing assignee companies' yearly counts of USPTO patents. The patents were granted between 1980 and 2017. Please fill out the short form below and then click on the "Download" button. The information you provide helps us better understand interests in corporate patent data.
+You can download a CSV file containing assignee companies' yearly counts of USPTO patents. The patents were granted between 1976 and 2023. Please fill out the short form below and then click on the "Download" button. The information you provide helps us better understand interests in corporate patent data.

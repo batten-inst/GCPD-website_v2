@@ -1,8 +1,5 @@
 export const lists = {
-  dataYearRange: {
-    min: 1976,
-    max: 2023,
-  },
+  defaultYearRange: [1976, 2023],
   sectors: [
     {
       sector_code: '0',

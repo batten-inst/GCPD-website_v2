@@ -7,6 +7,7 @@ import { dataProm } from '@/assets/js/fetchData';
 
 // import components; FilterBus is an event bus
 import { FilterBus } from '@/assets/js/FilterBus';
+import { lists } from '@/assets/data/listData';
 
 export default {
   data() {
@@ -14,7 +15,7 @@ export default {
       calculating: false,
       geography: 'All Countries',
       sector: 'All Sectors',
-      rangeYears: [1976, 2023],
+      rangeYears: lists.defaultYearRange,
     };
   },
   created() {
@@ -106,7 +107,7 @@ export default {
       FilterBus.$on('reset-data', () => {
         this.changeGeography('All Countries');
         this.changeSector('All Sectors');
-        this.changeYears([2010, 2017]);
+        this.changeYears(lists.defaultYearRange);
         this.emitData();
       });
       //-- ends listneing for changes --//

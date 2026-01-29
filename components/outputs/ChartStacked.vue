@@ -1,6 +1,7 @@
 <script>
 import { fillRange } from '@/assets/js/utility';
 import { Chart } from 'highcharts-vue';
+import { lists } from '@/assets/data/listData';
 
 import Highcharts from 'highcharts';
 import streamgraphInit from 'highcharts/modules/streamgraph';
@@ -40,7 +41,7 @@ export default {
         },
         series: [],
         xAxis: {
-          categories: fillRange(1976, 2023),
+          categories: fillRange(...lists.defaultYearRange),
           labels: {
             step: 5,
           },

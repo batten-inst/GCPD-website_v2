@@ -45,14 +45,6 @@ const regionSectorDataProm = d3.csv(require('@/assets/data/region_sector.csv'))
     return data;
   });
 
-// TODO
-// const company1980to89DataProm = d3.csv(
-//   require('@/assets/data/df_companytotals_1980to89.csv'),
-// );
-
-// const company2007to16DataProm = d3.csv(
-//   require('@/assets/data/df_companytotals_2007to16.csv'),
-// );
 
 const top10CompaniesDataProm = d3
   .csv(require('@/assets/data/top10_2014to2023.csv'))

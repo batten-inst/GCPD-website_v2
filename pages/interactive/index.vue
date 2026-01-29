@@ -2,6 +2,7 @@
 import introJs from 'intro.js';
 
 import { FilterBus } from '@/assets/js/FilterBus.js';
+import { lists } from '@/assets/data/listData';
 
 import ComputeData from '@/components/ComputeData';
 
@@ -15,7 +16,7 @@ let keyCounter = 0;
 // default parameters
 const defaultCountry = 'All Countries';
 const defaultSector = 'All Sectors';
-const defaultRangeYears = [1976, 2023];
+const defaultRangeYears = lists.defaultYearRange;
 
 export default {
   components: {

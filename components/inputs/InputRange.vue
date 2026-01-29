@@ -21,8 +21,8 @@ export default {
   data() {
     return {
       rangeYears: this.rangeYears_,
-      minYear: lists.dataYearRange.min,
-      maxYear: lists.dataYearRange.max,
+      minYear: lists.defaultYearRange[0],
+      maxYear: lists.defaultYearRange[1],
     };
   },
   computed: {

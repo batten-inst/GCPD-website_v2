@@ -4,14 +4,10 @@ import { FilterBus } from '@/assets/js/FilterBus';
 
 import { lists } from '@/assets/data/listData';
 
-import CardCompanyFacts from '@/components/outputs/CardCompanyFacts';
-
 const sectors = lists.sectors;
 
 export default {
-  components: {
-    CardCompanyFacts,
-  },
+
   props: {
     listLength: { type: Number, default: 25 },
   },
@@ -25,6 +21,12 @@ export default {
       numCompaniesInSelectedData: null,
     };
   },
+  methods: {
+    removeLastWord(str) {
+      let lastIndex = str.lastIndexOf(' ');
+      return str.substring(0, lastIndex);
+    },
+  },
   computed: {
     sector_desc: function () {
       return this.sector !== undefined && this.sector !== ''
@@ -36,11 +38,16 @@ export default {
   beforeCreate() {
     // listen for new data from compute-data component
     FilterBus.$on('new-data', dataObj => {
-      const { sector, geography, rangeYears, cf, companyGrp } = dataObj;
+      const { sector, geography, rangeYears, companyGrp, cf } = dataObj;
       this.sector = sector;
       this.geography = geography;
       this.startYear = rangeYears[0];
       this.endYear = rangeYears[1];
+
+      this.sumPatentsInSelectedData = cf
+        .groupAll()
+        .reduceSum(d => d.patentcount)
+        .value();
 
       companyGrp.order(d => d.patentcount);
 
@@ -58,15 +65,19 @@ div(
   v-show="topCompanies"
   )
   div.uk-card-header.uk-padding-small.uk-animation-fade.uk-tile-muted
-    //- Show end year only if it's different from start year; same start and end means single year selection
-    //- h3.uk-h3.fg-orange-900.uk-margin-small-top  {{ startYear }}<span v-show="startYear != endYear">–{{ endYear }}</span>
-    h3.uk-h3.fg-blue-900  {{ geography }} <br />
-      span.fg-orange-300  {{ sector_desc }}
-
-    h5.uk-h5.my-text-heavy.fg-blue-900.uk-margin-remove(
+    
+    h2.uk-h2.my-text-thin.uk-animation-fade.fg-blue-400.uk-margin-remove(
+      class="uk-visible@m"
+      v-show="sumPatentsInSelectedData > 0"
+      ) {{ sumPatentsInSelectedData | thousandComma }} patents
+    
+    h5.uk-h5.fg-orange-900.uk-margin-remove(
       v-show="numCompaniesInSelectedData > 0"
-      ) {{ numCompaniesInSelectedData  | thousandComma  }} companies
-
+      ) By {{ numCompaniesInSelectedData  | thousandComma  }} companies in
+    
+    h4.uk-h4.fg-blue-300.uk-margin-small  {{ geography }} <br />
+      span.fg-orange-300  {{ sector_desc }}
+    
     div
       span.my-text-tiny.uk-label.region-label.asia-pacific Asia Pacific
       span.my-text-tiny.uk-label.region-label.europe Europe
@@ -80,28 +91,24 @@ div(
       :class="company.value.region | makeKebab "
       )
       div
-        span.uk-label.bg-white.fg-blue.uk-position-bottom-left
+        span.uk-label.bg-white.fg-blue.uk-position-top-right
           | {{ i+1 }}
-      
-        span.fg-black.uk-text-bold.uk-text-uppercase  {{ company.key }} <br />
+        li
+          a.fg-black.uk-text-bold.uk-text-uppercase(
+                target="_blank"
+                rel="noreferrer" 
+                :href="'https://www.google.com/search?q=%22'+ removeLastWord(company.key) +'%22+%22'+company.value.country+'%22'")
+                | {{ company.key }}
+ 
         h3.uk-margin-remove.fg-blue-900.uk-text-large.uk-float-right
-          | {{ company.value.patentcount | thousandComma }}
-        span.fg-blue.uk-text-small
+          a(
+                target="_blank" 
+                rel="noreferrer" 
+                :href="`https://patents.google.com/?assignee=${ removeLastWord(company.key) }&after=filing:${startYear}0101&before=filing:${endYear}1231&type=PATENT&num=50&sort=new`")
+            | {{ company.value.patentcount | thousandComma }}
+        li.uk-text-small
+          | {{ company.value.city }}, {{ company.value.country }}
+        li.uk-text-meta
           | {{ company.value.sector }}
-      card-company-facts.card-company(
-        :company="company",
-        :startYear="startYear",
-        :endYear="endYear"
-        uk-drop="pos: left-center; offset: 80; animation: uk-animation-fade; duration: 500"
-      )
-</template>
 
-<style lang="scss" scoped>
-#top-company-card {
-  font-family: FranklinGothicURW;
-  transition: background-color 0.15s;
-  &:hover {
-    background-color: white;
-  }
-}
-</style>
+</template>

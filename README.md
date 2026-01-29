@@ -17,7 +17,7 @@ Tasks are managed via [GitHub Issues](https://github.com/asifm/GCPD-website_v2/i
 
 ## Data Preparation 
 
-The data files used in this project were prepared in [this repo](https://github.com/batten-inst/GCPD-website_v2_data-prep) from this [csv file](https://github.com/batten-inst/GCPD-website_v2_data-prep/blob/main/input/GCPD_visual_data.csv) provided by Jan B.
+The data files used in this project were prepared in [this repo](https://github.com/batten-inst/GCPD-website_data-prep_v2) from this [csv file](https://github.com/batten-inst/GCPD-website_data-prep_v2/blob/main/input/GCPD_visual_data.csv) provided by Jan B.
 
 ## Technologies & Architecture
 

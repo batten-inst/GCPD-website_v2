@@ -5,27 +5,22 @@ export default {
       members: [
         {
           name: 'Jan Bena',
-          title:
-            'Associate Professor, University of British Columbia Sauder School of Business <br> Batten Research Fellow, UVA Darden School of Business',
+          title:'Associate Professor, Bank of Montreal Chair in International Finance, University of British Columbia Sauder School of Business <br>Batten Research Fellow, UVA Darden School of Business',
           email: 'Jan.bena@sauder.ubc.ca',
         },
         {
           name: 'Miguel A. Ferreira',
-          title: 'Banco BPI Professor of Finance',
-          institute: 'Nova School of Business and Economics',
+          title: 'BPI Fundação la Caixa Chair in Responsible Finance, Nova School of Business and Economics',
           email: 'miguel.ferreira@novasbe.pt',
         },
         {
           name: 'Pedro Matos',
-          title:
-            'John G. Macfarlane Family Chair and Professor of Business Administration <br> Academic Director of the Richard A. Mayo Center for Asset Management',
-          institute: 'UVA Darden School of Business',
+          title: 'James A. and Stacy Cooper Bicentennial Professor of Business Administration, UVA Darden School of Business',
           email: 'matosp@darden.virginia.edu',
         },
         {
           name: 'Pedro Pires',
-          title: 'Research Fellow',
-          institute: 'Nova School of Business and Economics',
+          title: 'Research Fellow, Nova School of Business and Economics',
           email: 'pedro.pires@novasbe.pt',
         },
       ],
@@ -46,7 +41,7 @@ export default {
           dl(v-for="(member, i) in members" :key="i").uk-width-1-1.uk-description-list
             dt.my-text-heavy {{ member.name }}
             dd(v-html="member.title")
-            dd {{ member.institute }}
+            
       
       div 
         .uk-card.uk-card-body.uk-card-default#batten

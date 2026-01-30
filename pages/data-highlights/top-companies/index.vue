@@ -91,7 +91,7 @@ export default {
     div.uk-padding-small.uk-margin-top
       h3 Top Ten Companies <span class="fg-orange-900">by Yearly Counts of Patents Assigned</span>
       p The years indicate when the patents were granted by the USPTO. 
-        nuxt-link(to="/data-highlights/note-sector-classification") See details on sector classification used.
+        nuxt-link(to="/data-highlights/note-sector-classification") See sector classification details.
      
       #control-panel.uk-grid(uk-grid).uk-margin-auto.uk-flex-bottom
         div(class="uk-width-1-4@s").uk-card.uk-card-body.uk-padding-small

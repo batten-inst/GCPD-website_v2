@@ -84,7 +84,7 @@ export default {
     h1.uk-heading-small Leading Innovators
     div(class="uk-column-1-2@s")
       p Patent assignment indicates ownership of a patent, that is, the rights to all benefits accruing from that patent. It does not necessarily mean the invention originated within the assignee company. However, patent ownership does indicate a company's interest in developing innovative products and processes. Hence, irrespective of a company's role in an invention, we here assume the company's ownership of the related patent signals a strong intent to pursue innovation.
-      p Between 2014 and 2023 (the last ten full years for which we have data), about 2.2 million USPTO patents were granted and subsequently assigned to publicly listed companies. The patents were well distributed across countries, illustrating the global nature of innovation.
+      p Between 2013 and 2022 (the last ten full years for which we have data), more than 2.3 million USPTO patents were granted and subsequently assigned to publicly listed companies. The patents were well distributed across countries, illustrating the global nature of innovation.
       p Non-U.S. firms owned rights to more than half of these patents. Surpassing U.S. firms, Japanese companies had the highest number of patents per firm. Overall, European firms filed fewer patents than North American or Asian firms.
       p IBM has consistently been among the top firms in recent times. Asian firms rose notably among the top innovators, with a strong presence in the consumer electronics sector (e.g., Samsung, Sony, and Panasonic). More recently, U.S. companies have staged a comeback, particularly those in the technology sector (e.g., Intel, Alphabet, and Qualcomm). 
 

@@ -51,7 +51,7 @@ export default {
           a.uk-button.uk-link-reset.uk-button-default(href="http://www.darden.virginia.edu/batten-institute/" target="_blank") Learn more
         
           div.uk-margin-medium-top.uk-align-right
-            img(alt="Darden School of Business" src="https://res.cloudinary.com/asifm/image/upload/w_450/v1543189024/darden-saunders-front_c1zvxm.jpg")
+            img(alt="Darden School of Business" src="/img/darden-saunders.jpg")
             .uk-text-center.uk-margin-remove.uk-text-small.uk-lightbox-caption Darden School of Business at the University of Virginia
         
 </template>

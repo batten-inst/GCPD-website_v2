@@ -5,8 +5,7 @@ export default {};
 <template lang="pug">
   nav.uk-navbar-right(uk-navbar uk-sticky="show-on-up:true; animation:uk-animation-slide-top" style="background-color: #fff").uk-box-shadow-small
     nuxt-link(to="/") 
-      //- img(alt="Darden School of Business" src="https://res.cloudinary.com/asifm/image/upload/w_400/v1556808653/logo_ho_t3qdlt.png").uk-float-left.uk-margin-left.logo
-      img(alt="Darden School of Business" src="~assets/img/logo_ho.png").uk-float-left.uk-margin-left.logo
+      img(alt="Darden School of Business" src="/img/logo_ho.png").uk-float-left.uk-margin-left.logo
     .uk-navbar-right.uk-margin-right(class="uk-visible@s")
       ul.uk-navbar-nav
         li.uk-button-text: nuxt-link(to="/") Home

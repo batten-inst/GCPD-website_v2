@@ -160,7 +160,7 @@ export default {
         chart-stacked(:custom-options="yearRegionStreamOpts")
     .uk-grid.uk-card-default.uk-padding
       div(class="uk-width-1-1@s")
-        p.uk-margin-large-top It's notable, but perhaps not surprising, that the Asia Pacific region outshines North America in manufacturing — and is not far behind in business equipment and software, the sector that generated most patents during 1976–2023.
+        p.uk-margin-large-top It's notable, but perhaps not surprising, that the Asia Pacific region outshines North America in <i>Consumer Discretionary</i> — and trails closely behind it in <i>Information Technology</i>, the sector with the most patents.
         chart-heatmap(:custom-options="regionSectorHeatmapOpts")
 </template>
 

@@ -55,8 +55,11 @@ Ensure you have Node.js installed, preferably using a version manager like `nvm`
    ```bash
    git clone <repository-url>
    cd GCPD-website_v2
-   npm install
+   npm ci
    ```
+
+  `npm ci` will install the exact versions of dependencies specified in `package-lock.json`. This is important because some dependencies are quite old and may not work with newer versions. Using `npm ci` ensures a consistent environment across different machines and prevents issues that could arise from updated packages.
+
 2. **Run the development server:**
    This command starts the Nuxt.js development server.
    ```bash

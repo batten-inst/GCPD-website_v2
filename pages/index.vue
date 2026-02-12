@@ -28,7 +28,7 @@ export default {
               p.uk-margin-remove-top This website has been updated to reflect the new Global Corporate Patent Dataset (GCPD) v2, which now covers an expanded set of companies, patents, and countries over a broader time frame.
               p The public release of this dataset will hopefully open up new research possibilities and enable the discovery of insights in different areas of finance and economics. This data will also help advance public discussions, outside of academia, on corporate innovation, productivity and performance.
               nuxt-link(to="/interactive")
-                img.uk-box-shadow-small.uk-box-shadow-hover-medium.uk-border-rounded.uk-margin-medium-top.uk-animation-slide-top(aria-hidden="true" src="https://res.cloudinary.com/asifm/image/upload/w_300/v1543798822/worldmap_static_j4peu3.png" alt="World map" @click="loading = !loading")
+                img.uk-box-shadow-small.uk-box-shadow-hover-medium.uk-border-rounded.uk-margin-medium-top.uk-animation-slide-top(aria-hidden="true" src="/img/worldmap-small.png" alt="World map" @click="loading = !loading")
               p.uk-text-small [Click on the map to see a larger, interactive version. It may take a few seconds to load all data.]
               div(v-if="loading" uk-spinner="ratio:5").uk-position-center.uk-position-absolute
       

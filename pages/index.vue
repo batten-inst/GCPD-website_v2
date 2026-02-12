@@ -23,12 +23,12 @@ export default {
           h1.my-text-heavy.uk-heading-medium.uk-margin-remove.fg-blue-500 Global Corporate Patent Dataset
           div
             div(class="uk-column-1-2@m")
-              p.fg-orange-900.uk-dropcap.uk-text-large.uk-column-span Corporate innovation plays a crucial role in pushing the frontier of technology — and technology's progress helps advance economic prosperity. By tracking corporate innovation, we can learn much about where and how new ideas, knowledge, products and techniques are emerging.
+              p.fg-orange-900.uk-margin-medium-top.uk-dropcap.uk-text-large.uk-column-span Corporate innovation plays a crucial role in pushing the frontier of technology — and technology's progress helps advance economic prosperity. By tracking corporate innovation, we can learn much about where and how new ideas, knowledge, products and techniques are emerging.
               p.uk-margin-remove-top The new dataset available here provides a window into the world of corporate patents — an important indicator of corporate research and development activities and the consequent innovation—across sectors and countries.
               p.uk-margin-remove-top This website has been updated to reflect the new Global Corporate Patent Dataset (GCPD) v2, which now covers an expanded set of companies, patents, and countries over a broader time frame.
               p The public release of this dataset will hopefully open up new research possibilities and enable the discovery of insights in different areas of finance and economics. This data will also help advance public discussions, outside of academia, on corporate innovation, productivity and performance.
               nuxt-link(to="/interactive")
-                img.uk-box-shadow-small.uk-border-rounded.uk-margin-medium-top.uk-animation-slide-top(aria-hidden="true" src="https://res.cloudinary.com/asifm/image/upload/w_300/v1543798822/worldmap_static_j4peu3.png" alt="World map" @click="loading = !loading")
+                img.uk-box-shadow-small.uk-box-shadow-hover-medium.uk-border-rounded.uk-margin-medium-top.uk-animation-slide-top(aria-hidden="true" src="https://res.cloudinary.com/asifm/image/upload/w_300/v1543798822/worldmap_static_j4peu3.png" alt="World map" @click="loading = !loading")
               p.uk-text-small [Click on the map to see a larger, interactive version. It may take a few seconds to load all data.]
               div(v-if="loading" uk-spinner="ratio:5").uk-position-center.uk-position-absolute
       

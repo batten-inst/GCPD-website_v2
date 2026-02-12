@@ -84,8 +84,8 @@ export default {
     .uk-grid(uk-grid).uk-card-default.uk-padding
       div(class="uk-width-1-3@s")
         p.uk-margin-large-top Consistent with broader trends in business and society, innovation now more often takes place in technology-focused companies — those with a significant technological component in their business operations and products — than in any other sector.
-        p In our data exploration, we use <i>Fama &amp; French 12-Sector Classification</i>, where the business equipment and software sector is a close approximation of what one would today call high technology.
-          nuxt-link(to="/data-highlights/note-sector-classification") Note on sector classification
+        p.uk-text-meta We use the Global Industry Classification Standard (GICS), developed in 1999 by S&P Dow Jones Indices and MSCI.&nbsp;
+          nuxt-link(to="/data-highlights/note-sector-classification") See details here.
         br
         p.uk-text-large Hover over the charts for more details.
       div(class="uk-width-2-3@s")

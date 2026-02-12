@@ -3,6 +3,10 @@ import { format as d3Format } from 'd3';
 
 import ChartStacked from '@/components/outputs/ChartStacked';
 
+import { lists } from '@/assets/data/listData';
+
+const [chartStart, chartEnd] = lists.chartYearRange;
+
 import {
   sectorsObj,
   yearSectorDataProm,
@@ -33,7 +37,7 @@ export default {
           },
         },
         title: {
-          text: 'Sector Share of Patents by Year (1976–2023)',
+          text: `Sector Share of Patents by Year (${chartStart}–${chartEnd})`,
         },
       },
       yearSectorStreamOpts: {
@@ -52,7 +56,7 @@ export default {
           },
         },
         title: {
-          text: 'Number of Patents by Sector and Year (1976–2023)',
+          text: `Number of Patents by Sector and Year (${chartStart}–${chartEnd})`,
         },
       },
     };

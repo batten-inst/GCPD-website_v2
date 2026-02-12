@@ -1,5 +1,6 @@
 export const lists = {
   defaultYearRange: [1976, 2023],
+  chartYearRange: [1976, 2022], // Exclude 2023 from charts as it's incomplete
   sectors: [
     {
       sector_code: '0',

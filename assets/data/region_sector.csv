@@ -1,49 +1,49 @@
 region,sector_code,count_companies,count_patents
-North America,10,3756,104022
-North America,15,9296,146848
-North America,20,21099,421011
-North America,25,13984,246646
-North America,30,4100,70324
-North America,35,22226,308663
-North America,40,3113,45851
-North America,45,24713,1030210
-North America,50,2496,122131
-North America,55,1164,3446
-North America,60,301,1626
-North America,NA,8316,57058
-Europe,10,1223,14628
-Europe,15,4882,93602
-Europe,20,12625,213092
-Europe,25,5035,100073
-Europe,30,1810,29655
-Europe,35,7215,169985
-Europe,40,648,5530
-Europe,45,5491,166057
-Europe,50,884,10457
-Europe,55,565,5782
-Europe,60,45,115
-Europe,NA,649,2771
-Asia Pacific,10,885,14272
-Asia Pacific,15,9404,135331
-Asia Pacific,20,13805,301004
-Asia Pacific,25,10450,536248
-Asia Pacific,30,2711,19848
-Asia Pacific,35,7267,63633
-Asia Pacific,40,465,1702
-Asia Pacific,45,17528,899944
-Asia Pacific,50,1243,28470
-Asia Pacific,55,634,3192
-Asia Pacific,60,314,896
-Asia Pacific,NA,244,2204
-Other,10,120,1011
-Other,15,397,1222
-Other,20,508,1701
-Other,25,331,1559
-Other,30,171,756
-Other,35,614,2683
-Other,40,105,1656
-Other,45,762,3256
-Other,50,47,88
-Other,55,33,63
+North America,10,3675,102122
+North America,15,9120,144910
+North America,20,20645,410522
+North America,25,13679,238003
+North America,30,4026,68525
+North America,35,21475,299628
+North America,40,2995,41741
+North America,45,24139,998573
+North America,50,2419,115796
+North America,55,1140,3369
+North America,60,292,1574
+North America,NA,8241,56471
+Europe,10,1191,14362
+Europe,15,4763,92117
+Europe,20,12308,207408
+Europe,25,4901,96604
+Europe,30,1768,29015
+Europe,35,6944,166407
+Europe,40,625,5478
+Europe,45,5302,160969
+Europe,50,860,10164
+Europe,55,555,5730
+Europe,60,44,114
+Europe,NA,640,2747
+Asia Pacific,10,864,13202
+Asia Pacific,15,9119,131983
+Asia Pacific,20,13411,294597
+Asia Pacific,25,10119,519921
+Asia Pacific,30,2626,19255
+Asia Pacific,35,6932,61886
+Asia Pacific,40,449,1628
+Asia Pacific,45,16849,868303
+Asia Pacific,50,1179,26367
+Asia Pacific,55,616,3142
+Asia Pacific,60,304,860
+Asia Pacific,NA,237,2179
+Other,10,115,968
+Other,15,383,1190
+Other,20,489,1631
+Other,25,321,1496
+Other,30,165,747
+Other,35,587,2591
+Other,40,102,1573
+Other,45,736,3027
+Other,50,46,87
+Other,55,32,60
 Other,60,16,29
-Other,NA,29,39
+Other,NA,28,38

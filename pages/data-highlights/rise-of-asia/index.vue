@@ -3,7 +3,10 @@ import { cross as d3Cross, format as d3Format } from 'd3';
 import ChartStacked from '@/components/outputs/ChartStacked';
 import ChartHeatmap from '@/components/outputs/ChartHeatmap';
 
-// import { lists } from '@/assets/data/listData.js';
+import { lists } from '@/assets/data/listData';
+
+const [chartStart, chartEnd] = lists.chartYearRange;
+
 import {
   sectorsObj,
   regionSectorDataProm,
@@ -35,7 +38,7 @@ export default {
           categories: regionList,
         },
         title: {
-          text: 'Region-Sector Heatmap (1976–2023)',
+          text: `Region-Sector Heatmap (${chartStart}–${chartEnd})`,
         },
         tooltip: {
           style: {
@@ -73,7 +76,8 @@ export default {
           },
         },
         title: {
-          text: 'Regional Share of Patents by Year (1976–2023)',
+
+          text: `Regional Share of Patents by Year (${chartStart}–${chartEnd})`,
         },
       },
       yearRegionStreamOpts: {
@@ -92,7 +96,7 @@ export default {
           },
         },
         title: {
-          text: 'Number of Patents by Region and Year (1976–2023)',
+           text: `Number of Patents by Region and Year (${chartStart}–${chartEnd})`,
         },
       },
     };

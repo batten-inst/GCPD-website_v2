@@ -27,11 +27,10 @@ export default {
               maxFontSize: 15,
               onArea: true,
             },
-            // stacking: 'percent',
           },
         },
         chart: {
-          height: 700,
+          height: 500,
           type: 'column',
           zoomType: 'xy',
           scrollablePlotArea: {
@@ -41,7 +40,7 @@ export default {
         },
         series: [],
         xAxis: {
-          categories: fillRange(...lists.defaultYearRange),
+          categories: fillRange(...lists.chartYearRange),
           labels: {
             step: 5,
           },
@@ -60,6 +59,5 @@ export default {
 
 <template lang="pug">
 div
-  //- p {{ chartOptions }}
   chart-highchart(:options="chartOptions")
 </template>

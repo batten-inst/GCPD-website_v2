@@ -1,11 +1,13 @@
 <script>
-// import { format as d3Format } from 'd3';
 import { Chart } from 'highcharts-vue';
 
 import Highcharts from 'highcharts';
 import heatmapInit from 'highcharts/modules/heatmap';
 heatmapInit(Highcharts);
+
 import { formatNumber } from '@/assets/js/utility.js';
+
+
 export default {
   components: {
     ChartHighchart: Chart,
@@ -66,7 +68,6 @@ export default {
         colorAxis: {
           min: 0,
           minColor: '#ffffff',
-          // maxColor: '#04258e',
           maxColor: '#301934',
         },
       },
@@ -80,7 +81,6 @@ export default {
 
 <template lang="pug"> 
 div 
-  //- p {{ chartOptions }}
   ChartHighchart(:options="chartOptions")
 </template>
 

@@ -11,7 +11,7 @@ Highcharts.setOptions({
     },
   },
   credits: {
-    text: 'Source: UVA Darden Global Corporate Patent Dataset, 2019',
+    text: 'Source: Global Corporate Patent Dataset, 2026',
     href: 'https://patents.darden.virginia.edu',
     style: {
       fontSize: '9px',

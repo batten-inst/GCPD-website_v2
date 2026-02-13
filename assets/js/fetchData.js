@@ -57,6 +57,11 @@ const top10CompaniesDataProm = d3
     return data;
   });
 
+const publicationsDataProm = d3.csv(require('@/assets/data/publications.csv'))
+  .then(data => {
+    return data;
+  });
+
 export {
   dataProm,
   sectorsObj,
@@ -64,6 +69,7 @@ export {
   yearRegionDataProm,
   regionSectorDataProm,
   top10CompaniesDataProm,
+  publicationsDataProm,
   // company1980to89DataProm,
   // company2007to16DataProm,
 };

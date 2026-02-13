@@ -37,11 +37,11 @@ export default {
         .uk-card.uk-card-body.uk-margin.bg-orange-50
           h2.uk-h2.fg-blue About the Data
           div
-            p.uk-padding-small.bg-orange-100 The Global Corporate Patent Dataset (v2) links, using sophisticated matching techniques, about <b>5.3 million patents</b> — awarded by the U.S. Patent and Trademark Office (USPTO) between January 1976 and September 2023 — to <b>25 thousand publicly listed companies</b> across 99 countries (as identified by the location of parent companies’ headquarters).
+            p.uk-padding-small.bg-orange-fade-out-9 The Global Corporate Patent Dataset (v2) links, using sophisticated matching techniques, about <b>5.3 million patents</b> — awarded by the U.S. Patent and Trademark Office (USPTO) between January 1976 and September 2023 — to <b>25 thousand publicly listed companies</b> across 99 countries (as identified by the location of parent companies’ headquarters).
 
             p.uk-margin-remove Originally released in 2019, the dataset has been significantly updated and expanded in 2026.
 
-            table.uk-table.uk-table-divider.comparison-table.uk-text-small.uk-margin-remove(class="uk-width-4-5@l")
+            table.bg-blue-fade-out-9.uk-table.uk-table-divider.comparison-table.uk-text-small.uk-margin-small-top
               thead
                 tr
                   th 
@@ -68,8 +68,8 @@ export default {
             p Please consult <a href="/documents/DataConstructionDetails_v2.pdf">this document</a> for a detailed description of the dataset, including its key features and how it was constructed. 
             button.uk-button.uk-button-secondary.uk-link-reset: nuxt-link(to="/get-data") Get Data
       
-        .uk-card.uk-card-body.uk-tile-muted.uk-padding-remove-top
-          h3.uk-h3 Understanding Innovation Through Patent Data
+        .uk-card.uk-card-body.uk-tile-muted
+          h3.uk-h3.uk-margin-small-top Understanding Innovation Through Patent Data
           p <strong>Pedro Matos</strong>, professor at the University of Virginia Darden School of Business, and <strong>Jan Bena</strong>, professor at the University of British Columbia Sauder School of Business, sat down with the Batten Institute's <strong>Erika Herz</strong> to talk about this dataset.
           p They described important aspects of the data and explained how this resource can benefit scholars who seek to understand corporate innovation.
           audio(controls).uk-margin-remove

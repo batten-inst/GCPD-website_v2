@@ -172,7 +172,7 @@ export default {
       // For SelectParameter to listen for this event
       FilterBus.$emit('circle-clicked', countrySelected);
 
-      evt.target.style.fill = 'darkred';
+      // evt.target.style.fill = 'darkred';
     },
     getRegion(country) {
       // Get the region of a country; to use as class name

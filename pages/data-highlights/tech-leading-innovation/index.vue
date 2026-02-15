@@ -84,10 +84,10 @@ export default {
 <template lang="pug">
 .uk-section.uk-animation-slide-top-small.uk-section-muted
   main.uk-container 
-    h1.uk-heading-small Technology Sector Leading in Innovation
+    h1.uk-heading-small Information Technology Sector Leading in Innovation
     .uk-grid(uk-grid).uk-card-default.uk-padding
       div(class="uk-width-1-3@s")
-        p.uk-margin-large-top Consistent with broader trends in business and society, innovation now more often takes place in technology-focused companies — those with a significant technological component in their business operations and products — than in any other sector.
+        p.uk-margin-large-top Consistent with broader trends in business and society, innovation now more often takes place in information-technology-focused companies than in any other sector by far.
         p.uk-text-meta We use the Global Industry Classification Standard (GICS), developed in 1999 by S&P Dow Jones Indices and MSCI.&nbsp;
           nuxt-link(to="/data-highlights/note-sector-classification") See details here.
         br
@@ -96,7 +96,7 @@ export default {
         chart-stacked(:custom-options="yearSectorColumnOpts")
     .uk-grid(uk-grid).uk-card-default.uk-padding
       div(class="uk-width-1-3@s")
-        p.uk-margin-large-top The chart above does not capture the fast growth in annual patent grants during this period. When put in that context, as is done in the streamgraph here, the surge of patents in the technology sector is even more striking. 
+        p.uk-margin-large-top The chart above does not capture the fast growth in annual patent grants during this period. When put in that context, as is done in the streamgraph here, the surge of patents in the information technology sector is even more striking. 
       div(class="uk-width-2-3@s")
          chart-stacked(:custom-options="yearSectorStreamOpts") 
 

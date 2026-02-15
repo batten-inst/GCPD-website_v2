@@ -41,7 +41,7 @@ export default {
 
             p.uk-margin-remove Originally released in 2019, the dataset has been significantly updated and expanded in 2026.
 
-            table.bg-orange-fade-out-9.uk-table.uk-table-divider.comparison-table.uk-text-small.uk-margin-small-top
+            table.uk-table.uk-table-divider.comparison-table.uk-text-small.uk-margin-small-top
               thead
                 tr
                   th 

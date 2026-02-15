@@ -14,8 +14,8 @@ export default {
 </script>
 
 <template lang="pug">
-.uk-section.uk-animation-slide-top-small.uk-padding-small.bg-blue-fade-out-9
-  .uk-container.uk-container-large.uk-padding-remove-top
+.uk-section.uk-animation-slide-top-small.uk-padding-remove.bg-blue-fade-out-9
+  .uk-container.uk-container-large.uk-padding-remove
     div(class="uk-grid uk-child-width-1-2@s")
       div
         .uk-card.uk-card-body
@@ -33,15 +33,15 @@ export default {
               p.uk-text-small [Click on the map to interactively explore the dataset. It may take a few seconds to load all data.]
               div(v-if="loading" uk-spinner="ratio:5").uk-position-center.uk-position-absolute
       
-      div.uk-margin-large-top.uk-padding
+      div.uk-margin-large-top
         .uk-card.uk-card-body.uk-margin.bg-orange-50
           h2.uk-h2.fg-blue About the Data
           div
-            p.uk-padding-small.bg-orange-fade-out-9 The Global Corporate Patent Dataset (v2) links, using sophisticated matching techniques, about <b>5.3 million patents</b> — awarded by the U.S. Patent and Trademark Office (USPTO) between January 1976 and September 2023 — to <b>25 thousand publicly listed companies</b> across 99 countries (as identified by the location of parent companies’ headquarters).
+            p The Global Corporate Patent Dataset (v2) links, using sophisticated matching techniques, about <b>5.3 million patents</b> — awarded by the U.S. Patent and Trademark Office (USPTO) between January 1976 and September 2023 — to <b>25 thousand publicly listed companies</b> across 99 countries (as identified by the location of parent companies’ headquarters).
 
             p.uk-margin-remove Originally released in 2019, the dataset has been significantly updated and expanded in 2026.
 
-            table.bg-blue-fade-out-9.uk-table.uk-table-divider.comparison-table.uk-text-small.uk-margin-small-top
+            table.bg-orange-fade-out-9.uk-table.uk-table-divider.comparison-table.uk-text-small.uk-margin-small-top
               thead
                 tr
                   th 

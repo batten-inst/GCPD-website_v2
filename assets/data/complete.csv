@@ -68875,12 +68875,12 @@ gvkey,year,company,city,country_code,sector_code,patentcount,country,region
 24713,1994,Namic USA Corp,Glens Falls,USA,35,3,United States,North America
 24713,1996,Namic USA Corp,Glens Falls,USA,35,1,United States,North America
 24713,2000,Namic USA Corp,Glens Falls,USA,35,1,United States,North America
-24714,1995,Siderurgica Venezolana Sivensa Saica Svs,Caracas,VEN,15,1,Venezuela (Bolivarian Republic of),Other
-24714,1996,Siderurgica Venezolana Sivensa Saica Svs,Caracas,VEN,15,1,Venezuela (Bolivarian Republic of),Other
-24714,1997,Siderurgica Venezolana Sivensa Saica Svs,Caracas,VEN,15,1,Venezuela (Bolivarian Republic of),Other
-24714,1998,Siderurgica Venezolana Sivensa Saica Svs,Caracas,VEN,15,2,Venezuela (Bolivarian Republic of),Other
-24714,1999,Siderurgica Venezolana Sivensa Saica Svs,Caracas,VEN,15,5,Venezuela (Bolivarian Republic of),Other
-24714,2000,Siderurgica Venezolana Sivensa Saica Svs,Caracas,VEN,15,4,Venezuela (Bolivarian Republic of),Other
+24714,1995,Siderurgica Venezolana Sivensa Saica Svs,Caracas,VEN,15,1,Venezuela,Other
+24714,1996,Siderurgica Venezolana Sivensa Saica Svs,Caracas,VEN,15,1,Venezuela,Other
+24714,1997,Siderurgica Venezolana Sivensa Saica Svs,Caracas,VEN,15,1,Venezuela,Other
+24714,1998,Siderurgica Venezolana Sivensa Saica Svs,Caracas,VEN,15,2,Venezuela,Other
+24714,1999,Siderurgica Venezolana Sivensa Saica Svs,Caracas,VEN,15,5,Venezuela,Other
+24714,2000,Siderurgica Venezolana Sivensa Saica Svs,Caracas,VEN,15,4,Venezuela,Other
 24715,1993,Vision Ten Inc,Carlstadt,USA,35,1,United States,North America
 24716,2003,H.D. Vest Inc,Irving,USA,40,1,United States,North America
 24717,2012,E Digital Corp,San Diego,USA,45,6,United States,North America
@@ -90681,39 +90681,39 @@ gvkey,year,company,city,country_code,sector_code,patentcount,country,region
 61534,2021,Jacuzzi Brands Inc,Milwaukee,USA,20,3,United States,North America
 61534,2022,Jacuzzi Brands Inc,Milwaukee,USA,20,1,United States,North America
 61534,2023,Jacuzzi Brands Inc,Milwaukee,USA,20,1,United States,North America
-61535,1984,Petroleos De Venezuela SA,Caracas,VEN,10,3,Venezuela (Bolivarian Republic of),Other
-61535,1985,Petroleos De Venezuela SA,Caracas,VEN,10,10,Venezuela (Bolivarian Republic of),Other
-61535,1986,Petroleos De Venezuela SA,Caracas,VEN,10,10,Venezuela (Bolivarian Republic of),Other
-61535,1987,Petroleos De Venezuela SA,Caracas,VEN,10,13,Venezuela (Bolivarian Republic of),Other
-61535,1988,Petroleos De Venezuela SA,Caracas,VEN,10,13,Venezuela (Bolivarian Republic of),Other
-61535,1989,Petroleos De Venezuela SA,Caracas,VEN,10,17,Venezuela (Bolivarian Republic of),Other
-61535,1990,Petroleos De Venezuela SA,Caracas,VEN,10,16,Venezuela (Bolivarian Republic of),Other
-61535,1991,Petroleos De Venezuela SA,Caracas,VEN,10,10,Venezuela (Bolivarian Republic of),Other
-61535,1992,Petroleos De Venezuela SA,Caracas,VEN,10,8,Venezuela (Bolivarian Republic of),Other
-61535,1993,Petroleos De Venezuela SA,Caracas,VEN,10,15,Venezuela (Bolivarian Republic of),Other
-61535,1994,Petroleos De Venezuela SA,Caracas,VEN,10,12,Venezuela (Bolivarian Republic of),Other
-61535,1995,Petroleos De Venezuela SA,Caracas,VEN,10,13,Venezuela (Bolivarian Republic of),Other
-61535,1996,Petroleos De Venezuela SA,Caracas,VEN,10,13,Venezuela (Bolivarian Republic of),Other
-61535,1997,Petroleos De Venezuela SA,Caracas,VEN,10,16,Venezuela (Bolivarian Republic of),Other
-61535,1998,Petroleos De Venezuela SA,Caracas,VEN,10,19,Venezuela (Bolivarian Republic of),Other
-61535,1999,Petroleos De Venezuela SA,Caracas,VEN,10,26,Venezuela (Bolivarian Republic of),Other
-61535,2000,Petroleos De Venezuela SA,Caracas,VEN,10,12,Venezuela (Bolivarian Republic of),Other
-61535,2001,Petroleos De Venezuela SA,Caracas,VEN,10,9,Venezuela (Bolivarian Republic of),Other
-61535,2002,Petroleos De Venezuela SA,Caracas,VEN,10,13,Venezuela (Bolivarian Republic of),Other
-61535,2003,Petroleos De Venezuela SA,Caracas,VEN,10,10,Venezuela (Bolivarian Republic of),Other
-61535,2004,Petroleos De Venezuela SA,Caracas,VEN,10,8,Venezuela (Bolivarian Republic of),Other
-61535,2005,Petroleos De Venezuela SA,Caracas,VEN,10,3,Venezuela (Bolivarian Republic of),Other
-61535,2006,Petroleos De Venezuela SA,Caracas,VEN,10,6,Venezuela (Bolivarian Republic of),Other
-61535,2007,Petroleos De Venezuela SA,Caracas,VEN,10,5,Venezuela (Bolivarian Republic of),Other
-61535,2008,Petroleos De Venezuela SA,Caracas,VEN,10,7,Venezuela (Bolivarian Republic of),Other
-61535,2009,Petroleos De Venezuela SA,Caracas,VEN,10,3,Venezuela (Bolivarian Republic of),Other
-61535,2010,Petroleos De Venezuela SA,Caracas,VEN,10,9,Venezuela (Bolivarian Republic of),Other
-61535,2011,Petroleos De Venezuela SA,Caracas,VEN,10,9,Venezuela (Bolivarian Republic of),Other
-61535,2012,Petroleos De Venezuela SA,Caracas,VEN,10,13,Venezuela (Bolivarian Republic of),Other
-61535,2013,Petroleos De Venezuela SA,Caracas,VEN,10,4,Venezuela (Bolivarian Republic of),Other
-61535,2014,Petroleos De Venezuela SA,Caracas,VEN,10,7,Venezuela (Bolivarian Republic of),Other
-61535,2015,Petroleos De Venezuela SA,Caracas,VEN,10,10,Venezuela (Bolivarian Republic of),Other
-61535,2016,Petroleos De Venezuela SA,Caracas,VEN,10,1,Venezuela (Bolivarian Republic of),Other
+61535,1984,Petroleos De Venezuela SA,Caracas,VEN,10,3,Venezuela,Other
+61535,1985,Petroleos De Venezuela SA,Caracas,VEN,10,10,Venezuela,Other
+61535,1986,Petroleos De Venezuela SA,Caracas,VEN,10,10,Venezuela,Other
+61535,1987,Petroleos De Venezuela SA,Caracas,VEN,10,13,Venezuela,Other
+61535,1988,Petroleos De Venezuela SA,Caracas,VEN,10,13,Venezuela,Other
+61535,1989,Petroleos De Venezuela SA,Caracas,VEN,10,17,Venezuela,Other
+61535,1990,Petroleos De Venezuela SA,Caracas,VEN,10,16,Venezuela,Other
+61535,1991,Petroleos De Venezuela SA,Caracas,VEN,10,10,Venezuela,Other
+61535,1992,Petroleos De Venezuela SA,Caracas,VEN,10,8,Venezuela,Other
+61535,1993,Petroleos De Venezuela SA,Caracas,VEN,10,15,Venezuela,Other
+61535,1994,Petroleos De Venezuela SA,Caracas,VEN,10,12,Venezuela,Other
+61535,1995,Petroleos De Venezuela SA,Caracas,VEN,10,13,Venezuela,Other
+61535,1996,Petroleos De Venezuela SA,Caracas,VEN,10,13,Venezuela,Other
+61535,1997,Petroleos De Venezuela SA,Caracas,VEN,10,16,Venezuela,Other
+61535,1998,Petroleos De Venezuela SA,Caracas,VEN,10,19,Venezuela,Other
+61535,1999,Petroleos De Venezuela SA,Caracas,VEN,10,26,Venezuela,Other
+61535,2000,Petroleos De Venezuela SA,Caracas,VEN,10,12,Venezuela,Other
+61535,2001,Petroleos De Venezuela SA,Caracas,VEN,10,9,Venezuela,Other
+61535,2002,Petroleos De Venezuela SA,Caracas,VEN,10,13,Venezuela,Other
+61535,2003,Petroleos De Venezuela SA,Caracas,VEN,10,10,Venezuela,Other
+61535,2004,Petroleos De Venezuela SA,Caracas,VEN,10,8,Venezuela,Other
+61535,2005,Petroleos De Venezuela SA,Caracas,VEN,10,3,Venezuela,Other
+61535,2006,Petroleos De Venezuela SA,Caracas,VEN,10,6,Venezuela,Other
+61535,2007,Petroleos De Venezuela SA,Caracas,VEN,10,5,Venezuela,Other
+61535,2008,Petroleos De Venezuela SA,Caracas,VEN,10,7,Venezuela,Other
+61535,2009,Petroleos De Venezuela SA,Caracas,VEN,10,3,Venezuela,Other
+61535,2010,Petroleos De Venezuela SA,Caracas,VEN,10,9,Venezuela,Other
+61535,2011,Petroleos De Venezuela SA,Caracas,VEN,10,9,Venezuela,Other
+61535,2012,Petroleos De Venezuela SA,Caracas,VEN,10,13,Venezuela,Other
+61535,2013,Petroleos De Venezuela SA,Caracas,VEN,10,4,Venezuela,Other
+61535,2014,Petroleos De Venezuela SA,Caracas,VEN,10,7,Venezuela,Other
+61535,2015,Petroleos De Venezuela SA,Caracas,VEN,10,10,Venezuela,Other
+61535,2016,Petroleos De Venezuela SA,Caracas,VEN,10,1,Venezuela,Other
 61546,1995,Insignia Solutions Plc,Phoenix,USA,45,1,United States,North America
 61546,2007,Insignia Solutions Plc,Phoenix,USA,45,1,United States,North America
 61550,1986,Applied Microsystems Corp,Redmond,USA,45,1,United States,North America

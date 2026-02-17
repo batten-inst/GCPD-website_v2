@@ -344,7 +344,7 @@ gvkey,year,company,city,country_code,sector_code,patentcount,country,region
 1965,2014,Babcock & Wilcox Co,Barberton,USA,NA,20,United States,North America
 222111,2014,Petroleo Brasileiro S.A.- Petrobras,Rio De Janeiro,BRA,10,12,Brazil,Other
 213479,2014,TotalEnergies Marketing Kenya PLC,Nairobi,KEN,10,10,Kenya,Other
-61535,2014,Petroleos De Venezuela SA,Caracas,VEN,10,7,Venezuela (Bolivarian Republic of),Other
+61535,2014,Petroleos De Venezuela SA,Caracas,VEN,10,7,Venezuela,Other
 287882,2014,Ecopetrol SA,Bogota,COL,10,3,Colombia,Other
 100465,2014,Sasol Ltd,Johannesburg,ZAF,15,11,South Africa,Other
 209382,2014,Vale SA,Rio De Janeiro,BRA,15,8,Brazil,Other
@@ -757,7 +757,7 @@ gvkey,year,company,city,country_code,sector_code,patentcount,country,region
 9239,2015,Rosemount Inc,Chanhassen,USA,NA,21,United States,North America
 2910,2015,Chamberlain Manufacturing Co,Chicago,USA,NA,20,United States,North America
 222111,2015,Petroleo Brasileiro S.A.- Petrobras,Rio De Janeiro,BRA,10,11,Brazil,Other
-61535,2015,Petroleos De Venezuela SA,Caracas,VEN,10,10,Venezuela (Bolivarian Republic of),Other
+61535,2015,Petroleos De Venezuela SA,Caracas,VEN,10,10,Venezuela,Other
 213479,2015,TotalEnergies Marketing Kenya PLC,Nairobi,KEN,10,8,Kenya,Other
 287882,2015,Ecopetrol SA,Bogota,COL,10,1,Colombia,Other
 100465,2015,Sasol Ltd,Johannesburg,ZAF,15,17,South Africa,Other
@@ -1170,7 +1170,7 @@ gvkey,year,company,city,country_code,sector_code,patentcount,country,region
 2370,2016,Brass-Craft Manufacturing,Novi,USA,NA,21,United States,North America
 213479,2016,TotalEnergies Marketing Kenya PLC,Nairobi,KEN,10,15,Kenya,Other
 222111,2016,Petroleo Brasileiro S.A.- Petrobras,Rio De Janeiro,BRA,10,8,Brazil,Other
-61535,2016,Petroleos De Venezuela SA,Caracas,VEN,10,1,Venezuela (Bolivarian Republic of),Other
+61535,2016,Petroleos De Venezuela SA,Caracas,VEN,10,1,Venezuela,Other
 277768,2016,Lupatech SA,Sao Paulo,BRA,10,1,Brazil,Other
 100465,2016,Sasol Ltd,Johannesburg,ZAF,15,15,South Africa,Other
 209382,2016,Vale SA,Rio De Janeiro,BRA,15,14,Brazil,Other

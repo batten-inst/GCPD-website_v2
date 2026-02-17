@@ -3,7 +3,7 @@
 The dataset is for academic or other non-commercial purposes only. You can request access by contacting us at <a href="mailto:GCPD@darden.virginia.edu">GCPD@darden.virginia.edu</a>. We'll make the dataset available after considering your intended use. Please note the following:
 </p>
 
-<div class="uk-card uk-card-body uk-padding-small bg-orange-50">
+<div class="uk-card uk-card-body uk-padding-small">
 
 <ul class="uk-list uk-list-bullet">
 <li>Please cite this paper if you use the data in a publication:

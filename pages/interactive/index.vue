@@ -100,7 +100,7 @@ div.uk-section.uk-padding-remove-vertical.uk-margin-medium
           div(
             class="uk-width-1-2@m"
             data-step=3 
-            data-intro="Filter the data by years. Select a period by changing the beginning year, end year, or both."
+            data-intro="Filter the data by years. Select a range of years or a single year."
             )
             input-range(
               :key="yearsComponentKey"
@@ -126,7 +126,7 @@ div.uk-section.uk-padding-remove-vertical.uk-margin-medium
             data-intro="The circles on the map show total patent counts by country. To see the data for a country, hover over its circle. <br><br> Double click to zoom and drag to pan. Get back to full view using the reset button.<br><br> When the data changes, the circles rescale based on the then current minimum and maximum."
             )
 
-          p.uk-h5.uk-padding-tiny.uk-margin-remove Global ranking by countries' total patents in the selected sector
+          p.uk-h5.uk-padding-tiny.uk-margin-remove Global ranking by countries' total patents in the selected sector(s) and year(s)
           
           map-with-circles.uk-align-center
           

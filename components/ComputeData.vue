@@ -175,7 +175,7 @@ export default {
 
 <template lang="pug">
 div.uk-position-absolute.uk-position-top-center(v-if="calculating")
-  span.uk-text-large Computing
-  span.uk-padding-large(uk-spinner="ratio:15")
+  span.uk-text-large Calculating...
+  span.uk-padding-large(uk-spinner="ratio:10")
 
 </template>

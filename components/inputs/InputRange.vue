@@ -3,6 +3,7 @@ import Vue from 'vue';
 import { FilterBus } from '@/assets/js/FilterBus';
 import { lists } from '@/assets/data/listData';
 
+import VueSelect from 'vue-select';
 // uikit doesn't have a good slider input; so a separate component
 import VueSlider from 'vue-slider-component';
 import 'vue-slider-component/theme/default.css';
@@ -10,6 +11,7 @@ import 'vue-slider-component/theme/default.css';
 export default {
   components: {
     VueSlider,
+    VueSelect,
   },
   props: {
     rangeYears_: {
@@ -23,9 +25,17 @@ export default {
       rangeYears: this.rangeYears_,
       minYear: lists.defaultYearRange[0],
       maxYear: lists.defaultYearRange[1],
+      selectedYear: null,
     };
   },
   computed: {
+    years() {
+      const years = [];
+      for (let i = this.minYear; i <= this.maxYear; i++) {
+        years.push(i);
+      }
+      return years;
+    },
     startYear: {
       get() {
         return this.rangeYears[0];
@@ -45,7 +55,17 @@ export default {
   },
   watch: {
     rangeYears(newValue) {
+      if (newValue[0] === newValue[1]) {
+        this.selectedYear = newValue[0];
+      } else {
+        this.selectedYear = null;
+      }
       FilterBus.$emit('change-rangeyears', newValue);
+    },
+    selectedYear(newValue) {
+      if (newValue) {
+        this.rangeYears = [newValue, newValue];
+      }
     },
   },
 };
@@ -53,8 +73,7 @@ export default {
 
 <template lang="pug">
   div.uk-padding-small.uk-box-shadow-small.bg-orange-fade-out-9.uk-box-shadow-hover-medium
-    span Select years. 
-    span.uk-text-meta Patents counted by grant year.
+    span.uk-text-meta Select a range of years 
     vue-slider(
       v-model="rangeYears" 
       :lazy="true"
@@ -64,6 +83,14 @@ export default {
       :enableCross="false"
       tooltip="always"
       )
+    div.uk-margin-small-bottom
+      span.uk-text-meta Select a single year
+      vue-select.param-select.uk-text-small(
+        :options="years" 
+        v-model="selectedYear" 
+        :clearable="true" 
+        maxHeight="300px"
+        )
 </template>
 
 <style lang="scss">

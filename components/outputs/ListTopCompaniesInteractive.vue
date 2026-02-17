@@ -34,6 +34,15 @@ export default {
         ? sectors.find(el => el.sector === this.sector).sector_desc
         : '';
     },
+    yearDisplay() {
+      if (this.startYear && this.endYear) {
+        if (this.startYear === this.endYear) {
+          return `${this.startYear}`;
+        }
+        return `${this.startYear} - ${this.endYear}`;
+      }
+      return '';
+    },
   },
 
   beforeCreate() {
@@ -69,15 +78,14 @@ div(
     
     h3.uk-h3.my-text-thin.uk-animation-fade.fg-blue-400.uk-margin-remove(
       class="uk-visible@m"
-      v-show="sumPatentsInSelectedData > 0"
       ) {{ sumPatentsInSelectedData | thousandComma }} patents
     
     h5.uk-h5.fg-orange-900.uk-margin-remove(
       v-show="numCompaniesInSelectedData > 0"
       ) By {{ numCompaniesInSelectedData  | thousandComma  }} companies in
     
-    h4.uk-h4.fg-blue-300.uk-margin-small  {{ geography }} <br />
-      span.fg-orange-300  {{ sector_desc }}
+    p.fg-blue-300.uk-margin-small  {{ geography }} | {{ yearDisplay }} <br />
+      span.fg-blue-200 {{ sector_desc }} <br />
     
     div
       span.my-text-tiny.uk-label.region-label.asia-pacific Asia Pacific

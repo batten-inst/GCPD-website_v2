@@ -72,7 +72,7 @@ export default {
 </script>
 
 <template lang="pug">
-  div.uk-padding-small.uk-box-shadow-small.bg-orange-fade-out-9.uk-box-shadow-hover-medium
+  div.uk-padding-small.uk-box-shadow-small.bg-blue-fade-out-9.uk-box-shadow-hover-medium
     span.uk-text-meta Select a range of years 
     vue-slider(
       v-model="rangeYears" 

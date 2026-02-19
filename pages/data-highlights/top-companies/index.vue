@@ -90,7 +90,7 @@ export default {
   .uk-container
     h1.uk-heading-small Leading Innovators
     div(class="uk-column-1-2@s")
-      p Patent assignment signifies ownership -- and thus the rights to all benefits accruing from a patent. It doesn't guarantee the invention originated in the assignee company, but it shows the company's commitment to developing innovative products and processes. Thus, we assume that owning the patent reflects a strong intent to pursue innovation, regardless of the company's role in the invention.
+      p Patent assignment signifies ownership. It doesn't necessarily mean the related invention originated in the assignee company, but it shows the company's commitment to developing innovative products and processes. The ranking below rests on the assumption that owning a patent reflects a strong intent to pursue innovation, regardless of the company's role in the invention.
     div.uk-padding-small.uk-margin-top
       h3 Top Ten Companies <span class="fg-orange-900">by Yearly Counts of Patents</span> | {{ !showLastFiveYears ? '2014–2018' : '2019–2023' }} 
      

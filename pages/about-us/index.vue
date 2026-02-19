@@ -20,7 +20,7 @@ export default {
         },
         {
           name: 'Pedro Pires',
-          title: 'Auxiliary Researcher of Finance, Nova School of Business and Economics.',
+          title: 'Researcher, Nova School of Business and Economics.',
           personalWebsite: 'https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=732403',
         },
         {

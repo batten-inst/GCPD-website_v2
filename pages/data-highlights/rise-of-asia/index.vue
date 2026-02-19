@@ -42,7 +42,7 @@ export default {
         },
         tooltip: {
           style: {
-            fontSize: '15px',
+            fontSize: '14px',
           },
           formatter() {
             return (
@@ -149,18 +149,18 @@ export default {
     h1.uk-heading-small The Rise of Asia
     .uk-grid(uk-grid).uk-card-default.uk-padding
       div(class="uk-width-1-3@s")
-        p.uk-margin-large-top Until the late 1970s, it was almost exclusively U.S. companies that filed patent applications with the USPTO. That changed around 1980 when both European and Asian companies started to seek U.S. patent protection for their innovation. In the subsequent years, the Asian countries as a whole far surpassed Europe and challenged the prominence of North America.
-        p.uk-text-large Hover over the charts to get more details.
+        p.uk-margin-large-top Until the late 1970s, it was mostly U.S. companies that filed patent applications with the USPTO. That changed around the 1980s when both European and Asian companies started to seek U.S. patent protection for their innovations with growing interest. In the subsequent years, Asian companies as a whole far surpassed Europe and challenged the prominence of North America.
+        p.uk-text-large.uk-text-meta Hover over the charts to get more details.
       div(class="uk-width-2-3@s")
         chart-stacked(:custom-options="yearRegionColumnOpts")
     .uk-grid(uk-grid).uk-card-default.uk-padding
       div(class="uk-width-1-3@s")
-        p.uk-margin-large-top The past few decades saw an explosion of patent grants in the US. The streamgraph here shows the changes in regional distribution within the context of that rapid overall growth.
+        p.uk-margin-large-top The recent decades saw an explosion of patent grants. The streamgraph here shows the changes in regional distribution within the context of that growth. Between 2013 and 2022 (the last ten full years for which we have data), more than 2.3 million USPTO patents were granted and assigned to publicly listed companies.
       div(class="uk-width-2-3@s")
         chart-stacked(:custom-options="yearRegionStreamOpts")
     .uk-grid.uk-card-default.uk-padding
       div(class="uk-width-1-1@s")
-        p.uk-margin-large-top It's notable, but perhaps not surprising, that the Asia Pacific region outshines North America in <i>Consumer Discretionary</i> — and trails closely behind it in <i>Information Technology</i>, the sector with the most patents.
+        p.uk-margin-large-top It's notable, but perhaps not surprising, that the Asia Pacific region outshines North America in <i>Consumer Discretionary</i> — and trails closely behind it in <i>Information Technology</i>, the sector with by far the most patents.
         chart-heatmap(:custom-options="regionSectorHeatmapOpts")
 </template>
 

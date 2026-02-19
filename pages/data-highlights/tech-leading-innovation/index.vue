@@ -91,7 +91,7 @@ export default {
         p.uk-text-meta We use the Global Industry Classification Standard (GICS), developed in 1999 by S&P Dow Jones Indices and MSCI.&nbsp;
           nuxt-link(to="/data-highlights/note-sector-classification") See details here.
         br
-        p.uk-text-large Hover over the charts for more details.
+        p.uk-text-large.uk-text-meta Hover over the charts for more details.
       div(class="uk-width-2-3@s")
         chart-stacked(:custom-options="yearSectorColumnOpts")
     .uk-grid(uk-grid).uk-card-default.uk-padding
@@ -101,3 +101,13 @@ export default {
          chart-stacked(:custom-options="yearSectorStreamOpts") 
 
 </template>
+
+<style lang="scss" scoped>
+@media (width: 850px) {
+  .uk-card-default,
+  .uk-padding,
+  .uk-container {
+    padding: 0%;
+  }
+}
+</style>

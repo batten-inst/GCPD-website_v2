@@ -9,7 +9,7 @@ const sectors = lists.sectors;
 export default {
 
   props: {
-    listLength: { type: Number, default: 25 },
+    listLength: { type: Number, default: 10 },
   },
   data() {
     return {
@@ -91,8 +91,7 @@ div(
       v-show="numCompaniesInSelectedData > 0"
       ) By {{ numCompaniesInSelectedData  | thousandComma  }} companies in
     
-    p.fg-blue-300.uk-margin-small  {{ geography }} | {{ yearDisplay }} <br />
-      span.fg-blue-200 {{ sector_desc }} <br />
+    p.fg-blue-300.uk-margin-small  {{ geography }} | {{ yearDisplay }} | {{ sector_desc }} 
     
     div
       span.my-text-tiny.uk-label.region-label.asia-pacific Asia Pacific

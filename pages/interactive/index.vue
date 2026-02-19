@@ -35,7 +35,7 @@ export default {
       sectorComponentKey: `sector-${keyCounter}`,
       countryComponentKey: `country-${keyCounter}`,
       listComponentKey: `list-${keyCounter}`,
-      listLength: 25,
+      listLength: 10,
     };
   },
   mounted() {

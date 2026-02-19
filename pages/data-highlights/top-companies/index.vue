@@ -53,6 +53,13 @@ export default {
   },
   methods: {
     formatNumber,
+    encodeStr(str) {
+      return encodeURIComponent(str);
+    },
+    cleanCompanyName(str) {
+      let cleaned = str.replace(/\s*\([^)]*\)/g, '');
+      return cleaned.trim();
+    },
     removeLastWord(str) {
       let lastIndex = str.lastIndexOf(' ');
       return str.substring(0, lastIndex);
@@ -86,47 +93,59 @@ export default {
       p Patent assignment indicates ownership of a patent, that is, the rights to all benefits accruing from that patent. It does not necessarily mean the invention originated within the assignee company. However, patent ownership does indicate a company's interest in developing innovative products and processes. Hence, irrespective of a company's role in an invention, we here assume the company's ownership of the related patent signals a strong intent to pursue innovation.
       p Between 2013 and 2022 (the last ten full years for which we have data), more than 2.3 million USPTO patents were granted and subsequently assigned to publicly listed companies. The patents were well distributed across countries, illustrating the global nature of innovation.
 
-    div.uk-padding-small.uk-margin-top
-      h3 Top Ten Companies <span class="fg-orange-900">by Yearly Counts of Patents Assigned</span>
-      p The years indicate when the patents were granted by the USPTO. See sector classification details 
-        nuxt-link(to="/data-highlights/note-sector-classification") here.
+    div.uk-padding-small.uk-margin-toip
+      h3 Top Ten Companies <span class="fg-orange-900">by Yearly Counts of Patents</span> | {{ !showLastFiveYears ? '2014–2018' : '2019–2023' }} 
      
-      #control-panel.uk-grid(uk-grid).uk-margin-auto.uk-flex-bottom
-        div(class="uk-width-1-4@s").uk-card.uk-card-body.uk-padding-small
+      #control-panel.uk-grid.uk-margin-auto.uk-flex-bottom(class="uk-child-width-1-3@m")
+        div.uk-card.uk-card-body.uk-padding-small
           vue-select(:options="regionList" v-model="region" :clearable="false" max-height="300px")
           br 
           vue-select(:options="sectorList" v-model="sector" :clearable="false")
 
         div.uk-card.uk-card-body.uk-padding-small
-          button.uk-button.uk-button-small(@click="updateYearsToShow") 
-            span(v-if="showLastFiveYears") Show Years 2014–2018 
-            span(v-else) Show Years 2019–2023
+          button.uk-button.uk-button-small.uk-text-small.uk-margin-remove(@click="updateYearsToShow") 
+            span(v-if="showLastFiveYears") Show 2014–2018 
+            span(v-else) Show 2019–2023
 
-        div.uk-card.uk-card-body.uk-padding-small
-          div
-            .uk-h5.uk-text-meta What the colors mean
+        
+        div.uk-margin-remove.uk-text-small.uk-padding-small
+          p.uk-text-meta The years indicate when the patents were granted by the USPTO. See sector classification details 
+            nuxt-link(to="/data-highlights/note-sector-classification") here.
+
+          div.uk-margin-top
+            p.uk-text-meta.uk-margin-remove What the colors mean
             span.my-text-tiny.uk-label.region-label.asia-pacific Asia Pacific
             span.my-text-tiny.uk-label.region-label.europe Europe
             span.my-text-tiny.uk-label.region-label.north-america North America
             span.my-text-tiny.uk-label.region-label.other Other
-        
     div.bg-white.uk-padding-small.uk-padding-remove-left
-      .uk-grid.uk-grid-small(uk-grid class="uk-child-width-1-3@s uk-child-width-expand@m")
+      .uk-grid.uk-grid-medium(uk-grid class="uk-child-width-1-3@s uk-child-width-expand@m")
         .uk-panel(v-for="yearArr in dataByYear.slice(0, 5)")
           .uk-label.bg-orange-900.uk-text-large.uk-box-shadow-small(v-if="yearArr[0] !== undefined") {{ yearArr[0].year }}
-          .uk-card.uk-card-default.uk-margin-small-bottom(v-for="(companyObj, i) in yearArr")
-            ul.uk-animation-slide-left.company-info-card.uk-list.uk-padding-small.uk-margin-remove.uk-inline-clip(:class="companyObj.region | makeKebab")
-              li.uk-text-small.uk-animation-slide-left
-                | {{ companyObj.sector}}
-              li.fg-blue.uk-text-bold.uk-text-uppercase.uk-text-break.uk-margin-remove
-                | {{ companyObj.company | removePeriods }}
-              li.uk-text-small.uk-margin-remove.uk-padding-remove.uk-text-left.fg-blue
-                | {{ companyObj.country }}
-              li.fg-black.uk-padding-small.uk-position-bottom-right
-                span.uk-text-emphasis.patentcount {{ companyObj.patentcount | thousandComma }}
-              span.uk-label.bg-white.fg-blue.uk-position-top-right.my-text-heavy.uk-box-shadow-small
-                | {{ i+1 }}
+          .uk-card.uk-card-default.uk-margin-small-bottom(v-for="(companyObj, i) in yearArr" :class="companyObj.region | makeKebab")
+            ul.uk-list.uk-padding-small.uk-margin-remove.list-item
+              div
+                span.uk-label.bg-white.fg-blue.uk-position-top-right
+                  | {{ i+1 }}
+                li
+                  a.uk-text-bold.uk-text-uppercase(
+                        target="_blank"
+                        rel="noreferrer" 
+                        :href="'https://www.google.com/search?q=%22'+ encodeStr(companyObj.company) +'%22+%22'+encodeStr(companyObj.country)+'%22'")
+                        | {{ companyObj.company | removePeriods }}
+  
+                li.uk-text-small.fg-blue-300
+                  span(v-if="companyObj.city") {{ companyObj.city }}, 
+                  | {{ companyObj.country }}
+                li.uk-text-small.fg-orange-900
+                  | {{ companyObj.sector }}
     
+                li.uk-margin-remove.uk-text-small
+                  a(
+                        target="_blank" 
+                        rel="noreferrer" 
+                        :href="`https://patents.google.com/?assignee=${ encodeStr(cleanCompanyName(companyObj.company)) }&after=filing:${companyObj.year}0101&before=filing:${companyObj.year}1231&type=PATENT&num=50&sort=new`")
+                    | {{ companyObj.patentcount | thousandComma }} patents
 
 </template>
 

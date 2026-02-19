@@ -73,24 +73,27 @@ export default {
 
 <template lang="pug">
   div.uk-padding-small.uk-box-shadow-small.bg-blue-fade-out-9.uk-box-shadow-hover-medium
-    span.uk-text-meta Select a range of years 
-    vue-slider(
-      v-model="rangeYears" 
-      :lazy="true"
-      :min="minYear" 
-      :max="maxYear"
-      :contained="true"
-      :enableCross="false"
-      tooltip="always"
-      )
-    div.uk-margin-small-bottom
-      span.uk-text-meta Select a single year
-      vue-select.param-select.uk-text-small(
-        :options="years" 
-        v-model="selectedYear" 
-        :clearable="true" 
-        maxHeight="300px"
-        )
+    div.uk-grid.uk-flex-bottom(uk-grid)
+      div(class="uk-width-2-3@s")
+        span.uk-text-meta Select a range of years 
+        vue-slider(
+          v-model="rangeYears" 
+          :lazy="true"
+          :min="minYear" 
+          :max="maxYear"
+          :contained="true"
+          :enableCross="false"
+          tooltip="always"
+          )
+      div(class="uk-width-1-3@s")
+        div.uk-margin-small-bottom
+          span.uk-text-meta Select a single year
+          vue-select.param-select.uk-text-small(
+            :options="years" 
+            v-model="selectedYear" 
+            :clearable="true" 
+            maxHeight="300px"
+            )
 </template>
 
 <style lang="scss">

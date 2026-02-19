@@ -32,13 +32,13 @@ export default {
     h1.uk-heading-small GCPD in Research Publications
     div
       p GCPD was first used in the following 2017 research paper, published in a leading finance journal. You can also read the 2018 UVA Darden Research Briefing, written for a general audience based on that paper.
-      div.uk-grid.uk-grid(uk-grid).uk-grid-large(class="uk-child-width-1-2@s").uk-padding-remove
+      div.uk-grid(class="uk-child-width-1-2@m").uk-padding-remove
         div(v-for="(pub, i) in publications" :key="i" v-if="pub.highlight == '1'")
           div.uk-card-body.bg-orange-50
-            .uk-h6
+            img.uk-width-small(:src="pub.imgSrc" :alt="pub.publication")
+            .uk-h6.uk-margin-remove
               span.fg-blue {{ pub.publication }} 
               span.fg-orange-700 {{ pub.year }}
-            img.uk-width-small(:src="pub.imgSrc" :alt="pub.publication").uk-float-right.uk-margin-small-left
             p.uk-text-large.uk-margin-small {{ pub.title }}
             p.uk-text-bold.uk-margin-remove {{ pub.authors }}
 
@@ -55,7 +55,7 @@ export default {
       div(class="uk-width-2-3@s" v-for="(pub, i) in publications" :key="i" v-if="pub.highlight == 0").uk-card-default
         div.uk-card-body.uk-margin-bottom.bg-blue-fade-out-9
           a(:href="pub.readMoreLink" target="_blank").uk-link-reset
-            img.uk-width-small(:src="pub.imgSrc" :alt="pub.publication").uk-float-right.uk-margin-small-left
+            img.uk-width-small(:src="pub.imgSrc" :alt="pub.publication")
           .uk-h6.uk-margin-remove
             span.fg-blue {{ pub.publication }} 
             span.fg-orange-700 {{ pub.year }}

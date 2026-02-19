@@ -106,6 +106,9 @@ export default {
 
       FilterBus.$on('reset-data', () => {
         this.showMessageCalculating();
+        this.geography = 'All Countries';
+        this.sector = 'All Sectors';
+        this.rangeYears = lists.defaultYearRange;
         this.changeGeography('All Countries');
         this.changeSector('All Sectors');
         this.changeYears(lists.defaultYearRange);

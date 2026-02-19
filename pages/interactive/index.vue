@@ -48,7 +48,9 @@ export default {
       this.countryComponentKey = `country-${keyCounter}`;
       this.sectorComponentKey = `sector-${keyCounter}`;
       this.listComponentKey = `list-${keyCounter}`;
-      FilterBus.$emit('reset-data');
+      this.$nextTick(() => {
+        FilterBus.$emit('reset-data');
+      });
     },
     startGuide() {
       introJs().start();

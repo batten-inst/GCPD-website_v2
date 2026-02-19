@@ -23,7 +23,7 @@ export default {
         plotOptions: {
           series: {
             label: {
-              minFontSize: 9,
+              minFontSize: 8,
               maxFontSize: 15,
               onArea: true,
             },

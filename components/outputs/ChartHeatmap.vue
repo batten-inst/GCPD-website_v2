@@ -34,7 +34,7 @@ export default {
           height: 450,
           type: 'heatmap',
           marginTop: 40,
-          marginBottom: 150,
+          marginBottom: 200,
           plotBorderWidth: 1,
           scrollablePlotArea: {
             minWidth: 500,
@@ -43,12 +43,11 @@ export default {
         },
         series: [],
         legend: {
-          align: 'right',
-          layout: 'vertical',
-          margin: 0,
-          verticalAlign: 'top',
-          y: 25,
-          symbolHeight: 280,
+          layout: 'horizontal',
+          verticalAlign: 'bottom',
+          y: -15,
+          symbolWidth: 300,
+          symbolPadding: 20,
         },
         xAxis: {
           visible: true,
@@ -68,7 +67,7 @@ export default {
         colorAxis: {
           min: 0,
           minColor: '#ffffff',
-          maxColor: '#301934',
+          maxColor: '#1a223b',
         },
       },
     };

@@ -100,7 +100,7 @@ div(
       span.my-text-tiny.uk-label.region-label.other Other
   
   ul.uk-list.uk-padding-remove
-    li#top-company-card.uk-text-left.uk-animation-slide-left.uk-padding-small.uk-box-shadow-small.list-item(
+    li.uk-text-left.uk-animation-slide-left.uk-padding-small.uk-box-shadow-small.list-item(
       v-for="(company, i) in topCompanies.slice(0, listLength)" 
       :key="company.value.gvkey" 
       :class="company.value.region | makeKebab "

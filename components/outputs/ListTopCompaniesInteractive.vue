@@ -23,6 +23,13 @@ export default {
     };
   },
   methods: {
+    encodeStr(str) {
+      return encodeURIComponent(str);
+    },
+    cleanCompanyName(str) {
+      let cleaned = str.replace(/\s*\([^)]*\)/g, '');
+      return cleaned.trim();
+    },
     removeLastWord(str) {
       let lastIndex = str.lastIndexOf(' ');
       return str.substring(0, lastIndex);
@@ -106,14 +113,14 @@ div(
           a.fg-black.uk-text-bold.uk-text-uppercase(
                 target="_blank"
                 rel="noreferrer" 
-                :href="'https://www.google.com/search?q=%22'+ company.key +'%22+%22'+company.value.country+'%22'")
+                :href="'https://www.google.com/search?q=%22'+ encodeStr(company.key) +'%22+%22'+encodeStr(company.value.country)+'%22'")
                 | {{ company.key }}
  
         h3.uk-margin-remove.fg-blue-900.uk-text-large.uk-float-right
           a(
                 target="_blank" 
                 rel="noreferrer" 
-                :href="`https://patents.google.com/?assignee=${ company.key }&after=filing:${startYear}0101&before=filing:${endYear}1231&type=PATENT&num=50&sort=new`")
+                :href="`https://patents.google.com/?assignee=${ encodeStr(cleanCompanyName(company.key)) }&after=filing:${startYear}0101&before=filing:${endYear}1231&type=PATENT&num=50&sort=new`")
             | {{ company.value.patentcount | thousandComma }}
         li.uk-text-small
           | {{ company.value.city }}, {{ company.value.country }}

@@ -45,8 +45,8 @@ export default {
               thead
                 tr
                   th 
-                  th.fg-orange-900 GCPD v1 (2019)
-                  th.fg-orange-900 GCPD v2 (2026)
+                  th.fg-orange-900 GCPD v1
+                  th.fg-orange-900 GCPD v2
               tbody
                 tr
                   td.fg-orange-900 Years covered
@@ -65,7 +65,8 @@ export default {
                   td 50
                   td 99
 
-            p Please consult <a href="/documents/DataConstructionDetails_v2.pdf">this document</a> for a detailed description of the dataset, including its key features and how it was constructed. 
+            <p>Please consult Section 2.4 and Appendix D of <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6350538" target="_blank">this paper</a> for detailed information about the construction of the dataset.</p>
+            
             button.uk-button.uk-button-secondary.uk-link-reset: nuxt-link(to="/get-data") Get Data
       
         .uk-card.uk-card-body.uk-tile-muted

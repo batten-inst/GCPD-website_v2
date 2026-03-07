@@ -16,9 +16,8 @@ The dataset is for academic or other non-commercial purposes only. You can reque
 </div>
 
 ### What the Dataset Contains
-The dataset has information on about 5.3 million USPTO patents, which were granted between 1976 and 2023 and assigned to *publicly listed* companies worldwide. The patents have been linked to   the assignee companies using the following identifiers:
-  - Unique Patent Number, as given by the USPTO,
+The dataset matches about 5.3 million USPTO patents, granted between 1976 and 2023, to publicly listed assignee companies worldwide, using the following identifiers:
+  - Unique Patent Number, as given by the USPTO; and
   - GVKEY, as the firm identifier, from the S&P Compustat Global database. 
 
-**Please consult [this document](/documents/DataConstructionDetails_v2.pdf) for more details.**
-
+<p>Please consult Section 2.4 and Appendix D of <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6350538" target="_blank">this paper</a> for detailed information about the construction of the dataset.</p>

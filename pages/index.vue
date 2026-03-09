@@ -65,7 +65,8 @@ export default {
                   td 50
                   td 99
 
-            <p>Please consult Section 2.4 and Appendix D of <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6350538" target="_blank">this paper</a> for detailed information about the construction of the dataset.</p>
+            p Please consult Section 2.4 and Appendix D of this working paper for detailed information about the construction of the dataset: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6350538" target="_blank">Barkemeyer, David; Bena, Jan; and Li, Xiyue (2026), <strong>“Technology Life Cycles: Investment, Growth, and Firm Value”</strong></a>.
+            
             
             button.uk-button.uk-button-secondary.uk-link-reset: nuxt-link(to="/get-data") Get Data
       
